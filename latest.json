@@ -1,0 +1,5 @@
+{
+  "version": "1.1.5",
+  "url": "https://github.com/vmlxllm/vmlx-releases/releases/tag/v1.1.5",
+  "notes": "Fix critical streaming hang (_suppress_tools NameError), MLLM disconnect cleanup, download cancel/quit fixes, Responses API parity"
+}
