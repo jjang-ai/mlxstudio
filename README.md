@@ -14,11 +14,11 @@ Or visit [vmlx.net/download](https://vmlx.net/download) for installation instruc
 
 | | Minimum | Recommended |
 |---|---|---|
-| **Platform** | macOS 26+ (Tahoe) | macOS 26+ (Tahoe) |
+| **Platform** | macOS 14+ (Sonoma) | macOS 15+ (Sequoia) |
 | **Chip** | Apple Silicon (M1) | M1 Pro or later |
 | **RAM** | 8 GB unified memory | 16 GB+ (for 7B–20B models) |
 
-> **Note:** MLX requires Metal 4.0, which is only available on macOS 26 (Tahoe) or later. Earlier macOS versions will not work.
+> **Note:** MLX requires Metal support on Apple Silicon. macOS 14 (Sonoma) or later is required.
 
 More unified memory = larger models. 16 GB handles up to ~20B parameters, 32 GB handles ~35B, 64 GB handles ~70B, and 192 GB handles 400B+ MoE models.
 
