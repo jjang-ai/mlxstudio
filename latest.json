@@ -1,5 +1,5 @@
 {
-  "version": "1.1.9",
-  "url": "https://github.com/vmlxllm/vmlx-releases/releases/tag/v1.1.9",
-  "notes": "Remove regex VLM detection, preemptive torchvision patch, fix shared qwen3_5 model_type"
+  "version": "1.2.0",
+  "url": "https://github.com/vmlxllm/vmlx-releases/releases/tag/v1.2.0",
+  "notes": "Fix HuggingFace download progress, fix NaN/Unknown in HF browser, fix macOS 15 launch (GitHub #10), deep stability audit (14 fixes: paged cache blocks, KV dequantize safety, reasoning markers, tool fallback, Mistral JSON), CancelledError SSE fix, 2125 tests"
 }
