@@ -12,13 +12,13 @@ Or visit [vmlx.net/download](https://vmlx.net/download) for installation instruc
 
 ## Requirements
 
-| | Minimum | Recommended |
+| | Local Inference | Remote Endpoints Only |
 |---|---|---|
-| **Platform** | macOS 14+ (Sonoma) | macOS 15+ (Sequoia) |
-| **Chip** | Apple Silicon (M1) | M1 Pro or later |
-| **RAM** | 8 GB unified memory | 16 GB+ (for 7B–20B models) |
+| **Platform** | macOS 26+ (Tahoe) | macOS 14+ (Sonoma) |
+| **Chip** | Apple Silicon (M1) | Apple Silicon (M1) |
+| **RAM** | 8 GB unified memory | 4 GB |
 
-> **Note:** MLX requires Metal support on Apple Silicon. macOS 14 (Sonoma) or later is required.
+> **Note:** Local MLX inference requires Metal 4 (macOS 26+). Remote endpoints (OpenAI, Groq, etc.) work on macOS 14+.
 
 More unified memory = larger models. 16 GB handles up to ~20B parameters, 32 GB handles ~35B, 64 GB handles ~70B, and 192 GB handles 400B+ MoE models.
 
