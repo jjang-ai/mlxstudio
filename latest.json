@@ -1,5 +1,5 @@
 {
   "version": "1.2.1",
   "url": "https://github.com/vmlxllm/vmlx-releases/releases/tag/v1.2.1",
-  "notes": "Chat UI overhaul with rich tool display, inline diffs, logs panel, design system with light/dark themes, layout shell with sidebar, encrypted API keys, 3422 tests"
+  "notes": "Nemotron/Mamba hybrid fix, reasoning boxes, GPT-OSS/GLM-4 reasoning restore, download search sorting, chat UI overhaul, light/dark themes, logs panel, encrypted API keys, 2692 tests"
 }
