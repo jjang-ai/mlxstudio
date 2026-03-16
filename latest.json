@@ -1,5 +1,5 @@
 {
   "version": "1.2.2",
   "url": "https://github.com/jjang-ai/mlxstudio/releases/tag/v1.2.2",
-  "notes": "Critical fix: removed default system prompt that caused abliterated/CRACK models to refuse. Nemotron/Mamba hybrid fix, reasoning auto-detect restore, SSM build patch, download sorting, chat UI overhaul, themes, logs panel, encrypted API keys"
+  "notes": "Image generation (Flux, Z-Image Turbo, Klein), JANG adaptive quantization, Anthropic API, HuggingFace token support, 50+ bug fixes, vllm-to-vmlx rename, menu bar GPU memory, thread-safe caching, atomic disk writes"
 }
