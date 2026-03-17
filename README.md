@@ -43,7 +43,16 @@
 
 MLX Studio is a complete desktop app for running LLMs, VLMs, and image generation models locally on your Mac. No cloud, no API keys, no data leaving your machine. Supports every model on [mlx-community](https://huggingface.co/mlx-community) -- Qwen, Llama, Mistral, Gemma, Phi, DeepSeek, and thousands more. Built on [vMLX Engine](https://github.com/jjang-ai/vmlx) and Apple's [MLX](https://github.com/ml-explore/mlx) framework.
 
-> **JANG 2-bit beats MLX 4-bit, 3-bit, and 2-bit** — Our adaptive mixed-precision quantization (JANG\_2S, JANG\_2.6) outperforms standard MLX quantization on MiniMax M2.5, Qwen3, and other models. Check benchmark scores at [jangq.ai](https://jangq.ai) and try MiniMax M2.5 with MLX Studio. Pre-quantized models on [JANGQ-AI](https://huggingface.co/JANGQ-AI).
+> **JANG 2-bit destroys MLX 4-bit on [MiniMax M2.5](https://huggingface.co/JANGQ-AI/MiniMax-M2.5-JANG_2L):**
+>
+> | Quantization | MMLU (200q) | Size |
+> |---|---|---|
+> | **JANG\_2L (2-bit)** | **74%** | **89 GB** |
+> | MLX 4-bit | 26.5% | 120 GB |
+> | MLX 3-bit | 24.5% | 93 GB |
+> | MLX 2-bit | 25% | 68 GB |
+>
+> Adaptive mixed-precision quantization keeps critical layers at higher precision while compressing the rest. Check scores at [jangq.ai](https://jangq.ai). Models at [JANGQ-AI](https://huggingface.co/JANGQ-AI).
 
 ---
 
