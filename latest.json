@@ -1,5 +1,5 @@
 {
-  "version": "1.2.6",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/tag/v1.2.6",
-  "notes": "JANG VL support (35B/122B with images), Fill mask painter, image editing fixes, per-byte downloads, memory-pressure batching, chunked VLM prefill, Anthropic/MCP/tool call fixes"
+  "version": "1.2.7",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/tag/v1.2.7",
+  "notes": "JIT Sleep & Auto-Wake, smoother streaming, disk cache fixes, standby session recovery, full API endpoint coverage, Codex/Claude Code config fixes, 50+ bug fixes"
 }
