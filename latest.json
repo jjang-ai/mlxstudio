@@ -1,5 +1,5 @@
 {
-  "version": "1.2.7",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/tag/v1.2.7",
-  "notes": "JIT Sleep & Auto-Wake, smoother streaming, disk cache fixes, standby session recovery, full API endpoint coverage, Codex/Claude Code config fixes, 50+ bug fixes"
+  "version": "1.2.8",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/tag/v1.2.8",
+  "notes": "72 fixes — reasoning ON/OFF, GQA head normalization, CacheList MoE prefix cache, download persistence, JANG bfloat16 MoE, suppress-reasoning UX, JIT wake improvements"
 }
