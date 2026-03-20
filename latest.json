@@ -1,5 +1,1 @@
-{
-  "version": "1.2.8",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/tag/v1.2.8",
-  "notes": "72 fixes — reasoning ON/OFF, GQA head normalization, CacheList MoE prefix cache, download persistence, JANG bfloat16 MoE, suppress-reasoning UX, JIT wake improvements"
-}
+{"version":"1.2.9","url":"https://github.com/jjang-ai/mlxstudio/releases/download/v1.2.9/vMLX-1.2.9-arm64.dmg","notes":"OpenClaw integration, manual setup code blocks, KV cache q8 default, L2 disk cache default, think seed removed, streaming throttle disabled"}
