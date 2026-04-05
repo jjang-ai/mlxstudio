@@ -1,1 +1,1 @@
-{"version":"1.3.26","url":"https://github.com/jjang-ai/mlxstudio/releases/tag/v1.3.26","notes":"Gemma 4 crash fixes, Ollama tool calls, deep audit fixes"}
+{"version":"1.3.28","url":"https://github.com/jjang-ai/mlxstudio/releases/tag/v1.3.28","notes":"Gemma 4 VLM image fix, memory leak hardening, deep audit fixes"}
