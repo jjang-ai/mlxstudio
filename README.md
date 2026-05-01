@@ -18,14 +18,19 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/jjang-ai/vmlx/releases?q=tag%3Av2&expanded=true">
+    <img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_Get_vMLX_v2_(Swift)-Recommended-orange?style=for-the-badge&logo=swift&logoColor=white" alt="Get vMLX v2 Swift" height="40">
+  </a>
+  &nbsp;&nbsp;
   <a href="https://github.com/jjang-ai/mlxstudio/releases/latest">
-    <img src="https://img.shields.io/badge/%E2%AC%87%EF%B8%8F_Download_DMG-Latest_Release-blue?style=for-the-badge&logo=apple&logoColor=white" alt="Download DMG" height="40">
+    <img src="https://img.shields.io/badge/Legacy_Python_Panel-1.4.0_DMG-lightgrey?style=for-the-badge&logo=python&logoColor=white" alt="Legacy Python DMG" height="40">
   </a>
 </p>
 
 <p align="center">
-  <b>No Python. No terminal. No config files.</b><br>
-  Download the DMG, drag to Applications, and run AI models locally in seconds.
+  <b>vMLX v2 — native Swift + Metal, 50–95 t/s on M-series.</b><br>
+  Zero PyTorch in the hot path. Pure SwiftUI. Drag and drop models.<br>
+  The Python panel above remains available for legacy support.
 </p>
 
 <p align="center">
