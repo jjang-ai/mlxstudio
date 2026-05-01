@@ -135,10 +135,11 @@ That's it. The app manages the entire Python engine, model downloads, and server
 
 Run any MLX model from HuggingFace -- thousands of models, zero configuration:
 
-- **Text LLMs** -- Qwen 2/2.5/3/3.5, Llama 3/3.1/3.2/3.3/4, Mistral/Mixtral/Codestral, Gemma 2/3, Phi-3/4, DeepSeek V2/V3/R1, GLM-4/4.7, Nemotron, MiniMax, Kimi, Step, XVERSE, Yi, InternLM, ChatGLM, CodeLlama, and any mlx-lm compatible model
-- **Vision LLMs (VL)** -- Qwen-VL, Qwen2.5-VL, Qwen3.5-VL, Pixtral, InternVL, LLaVA, Gemma 3n, Phi-3-Vision -- send images and video directly in chat
-- **Mixture-of-Experts** -- Qwen 3.5 MoE, Mixtral 8x7B/8x22B, DeepSeek V2/V3, MiniMax M2.5, Llama 4 Scout/Maverick
-- **Hybrid SSM Models** -- Nemotron-H, Jamba, GatedDeltaNet (Mamba + Attention architectures with dedicated hybrid cache)
+- **Text LLMs** -- Qwen 2/2.5/3/3.5/3.6, Llama 3/3.1/3.2/3.3/4, Mistral/Mixtral/Codestral, **Mistral-Medium-3.5** (ministral3, dense GQA + 256K YaRN + PIXTRAL vision), Mistral-Small-4 (MLA), Gemma 2/3/4, Phi-3/4, DeepSeek V2/V3/V4 (MLA), GLM-4/4.7/5, Nemotron, **Laguna** (poolside, 33B/3B SWA MoE), MiniMax M2.5/M2.7, Kimi K2.5/K2.6, Step, XVERSE, Yi, InternLM, ChatGLM, CodeLlama, and any mlx-lm compatible model
+- **Vision LLMs (VL)** -- Qwen-VL, Qwen2.5-VL, Qwen3.5-VL / Qwen3.6-VL, Pixtral, InternVL, LLaVA, Gemma 3n / 4-VL, Phi-3-Vision, Mistral-Medium-3.5 (PIXTRAL) -- send images and video directly in chat
+- **Multimodal Omni** -- **Nemotron-3-Nano-Omni** (text + image + audio + video) with Parakeet audio encoder + RADIO ViT vision tower; routed via OmniMultimodalDispatcher across `/v1/chat/completions`, `/v1/messages`, `/v1/responses`, and `/api/chat`
+- **Mixture-of-Experts** -- Qwen 3.5/3.6 MoE, Mixtral 8x7B/8x22B, DeepSeek V2/V3/V4, MiniMax M2.5/M2.7, Llama 4 Scout/Maverick, Laguna (256 routed experts top-8 + 1 shared)
+- **Hybrid SSM Models** -- Nemotron-H, Nemotron-3-Nano-Omni, Jamba, GatedDeltaNet, Qwen3.5-A3B hybrid, Granite MoE Hybrid, LFM2 (Mamba + Attention with dedicated hybrid cache + SSM companion + capture-during-prefill)
 - **Image Generation** -- Flux Schnell/Dev, Z-Image Turbo, FLUX.2 Klein 4B/9B (via mflux)
 - **Image Editing** -- Qwen Image Edit (instruction-based editing, full precision)
 - **Audio** -- Kokoro TTS, Whisper STT, Qwen3-Audio (via mlx-audio)
