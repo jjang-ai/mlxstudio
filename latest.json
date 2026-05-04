@@ -1,12 +1,12 @@
 {
-  "version": "1.5.13",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.13/vMLX-1.5.13-arm64.dmg",
+  "version": "1.5.14",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.14/vMLX-1.5.14-arm64.dmg",
   "swiftUrl": "https://github.com/jjang-ai/vmlx/releases/download/v2.0.0-rc.1/vMLX-2.0.0-rc.1-arm64.dmg",
   "swiftVersion": "2.0.0-rc.1",
   "swiftBetaUrl": "https://github.com/jjang-ai/vmlx/releases/download/v2.0.0-rc.1/vMLX-2.0.0-rc.1-arm64.dmg",
   "swiftBetaVersion": "2.0.0-rc.1",
-  "notes": "Python 1.5.13 — bundle-pipeline regression fix: prior 1.5.10/1.5.11/1.5.12 DMGs shipped stale 1.5.9 bundled-python because npm run build skipped scripts/bundle-python.sh. 1.5.13 chains bundle-python.sh + adds release-time version-drift guard (bundled vmlx_engine.__version__ must match package.json). Also drops the DSV4-only 512-token paged-cache short-prompt skip so DSV4-Flash uses the same paged-cache eligibility rules as every other family. DSV4 instant-load (sidecar fast path) and HSA/CSA/SWA combo paged/L2 cache from 1.5.12 are now actually present in the shipped DMG.",
+  "notes": "Python 1.5.14 — three runtime hotfixes on top of 1.5.13. (1) Paged + prefix cache now actually stores on multi-turn chat: removed the benchmark-era output_len≤3 store-skip in scheduler._cleanup_finished that was killing paged cache for short-reply chat — turn 2 of identical prompts now hits paged + disk L2 (live-verified 27s → 350ms = 78×). (2) DSV4 fast-load (sidecar) now runs _fix_quantized_bits + MLA bit-inference after wiring TurboQuantSwitchLinear, so embed/lm_head dequantize doesn't fail on the first inference call. (3) JANGTQ_K bundles built today: convert script now migrates legacy rope_scaling → rope_parameters at config-emit time so transformers 4.45+ AutoTokenizer.from_pretrained loads them without the 'max_position_embeddings' AttributeError. All four API protocols (/v1/chat/completions, /v1/messages, /api/chat, /v1/responses) share the same engine + scheduler and therefore benefit from the cache-store fix uniformly.",
   "primary": "swift",
-  "legacyUrl": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.13/vMLX-1.5.13-arm64.dmg",
-  "legacyVersion": "1.5.13"
+  "legacyUrl": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.14/vMLX-1.5.14-arm64.dmg",
+  "legacyVersion": "1.5.14"
 }
