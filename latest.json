@@ -1,12 +1,12 @@
 {
-  "version": "1.5.19",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.19/vMLX-1.5.19-arm64.dmg",
+  "version": "1.5.20",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.20/vMLX-1.5.20-arm64.dmg",
   "swiftUrl": "https://github.com/jjang-ai/vmlx/releases/download/v2.0.0-rc.1/vMLX-2.0.0-rc.1-arm64.dmg",
   "swiftVersion": "2.0.0-rc.1",
   "swiftBetaUrl": "https://github.com/jjang-ai/vmlx/releases/download/v2.0.0-rc.1/vMLX-2.0.0-rc.1-arm64.dmg",
   "swiftBetaVersion": "2.0.0-rc.1",
-  "notes": "Python 1.5.19 — JANGTQ-PRESTACK STANDARD support + MiniMax EOS fix + DSML routing through encoding_dsv4. (1) JANGTQ-PRESTACK STANDARD: bundles that ship routed expert tensors pre-stacked under `{prefix}.{ffn|mlp|block_sparse_moe}.switch_mlp.{gate_proj|up_proj|down_proj|gate_up_proj}.{tq_packed|tq_norms|tq_bits}` with shapes [n_experts, out, packed_in] are loaded as-is — no sidecar fast-load, no streaming restack. Verified end-to-end on DeepSeek-V4-VMLX (256 experts) and MiniMax-M2.7-JANGTQ (62 layers × 3 experts). DSV4 sidecar relocated to `~/.cache/vmlx-engine/jangtq-stacked/` with bundle-dir back-compat read. (2) MiniMax EOS — eos_token_id=200020 only present in generation_config.json (not config.json) was producing endless `[e~[` token loops; loader now merges generation_config eos_ids. (3) DSML tool-call extraction — DeepSeek-V4 outputs go through `encoding_dsv4.parse_message_from_completion_text` first, with regex fallback. (4) Ling-2.6-flash (`bailing_hybrid`) runtime support — vendored bailing_hybrid.py, fixed MTP cache slot crash, P15 gate-skip guard, think_in_template=False (Ling defaults thinking off). Inherits 1.5.16/1.5.17/1.5.18: bundled mlx_lm fp32 SDPA absorb branch (deepseek_v3/v32/mistral4); JANG_4K allocator routed-expert protection; paged + disk L2 cache (1.74× warm-prefix); Ollama/Anthropic/Responses gateway protocol fan-out; VMLX_MODELS_DIR. Apple notarized + stapled. SHA-256: c005fb1fcbff563436965f5e04ad1f99d6644c3d70b7b80d44da20511072cdb3",
+  "notes": "Python 1.5.20 — Hotfix for v1.5.19 regressions. (1) DSV4 garbage output (\"DeepAI\" / \\boxed{}) fixed by restoring prestack_pat handler in generic loader so DSV4 prestacked tensors hydrate as TurboQuantSwitchLinear correctly + Metal SwitchGLU monkey-patch attaches the fast-decode kernel path. (2) Laguna 90→20 t/s regression — same root cause as DSV4, fast-decode path now triggers. (3) MiniMax thinking-leak-as-content mitigation: keep enable_thinking unset/true; template always emits <think>. (4) JANGTQ3 in_features fix propagated into bundled jang_tools (was in source but missing from v1.5.19 bundle): loader now reads canonical in_features from the pre-replacement module instead of recovering via packed_cols * vals_per_u32 (over-rounds for bits=3 / vals_per_u32=10 on in_features not divisible by 10 — e.g. 4096→4100, 7168→7170). Apple notarized + stapled. SHA-256: 633b663180ceb2b6e09c48d21fd43f55ba821ed8091f7b026c0bf63f11740f98",
   "primary": "swift",
-  "legacyUrl": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.19/vMLX-1.5.19-arm64.dmg",
-  "legacyVersion": "1.5.19"
+  "legacyUrl": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.20/vMLX-1.5.20-arm64.dmg",
+  "legacyVersion": "1.5.20"
 }
