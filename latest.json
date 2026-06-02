@@ -1,16 +1,16 @@
 {
-  "version": "1.5.50",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.50/vMLX-1.5.50-sequoia-arm64.dmg",
-  "sha256": "d898085173011fd287a6ef77d9d608975f6f4c4b0632fe0f7366044f6bda8270",
+  "version": "1.5.51",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.51/vMLX-1.5.51-sequoia-arm64.dmg",
+  "sha256": "51b9c2d69740136f53ca998d4d4227b15ad7f99e86ab278421b74460fe63785c",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.50/vMLX-1.5.50-sequoia-arm64.dmg",
-      "sha256": "d898085173011fd287a6ef77d9d608975f6f4c4b0632fe0f7366044f6bda8270"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.51/vMLX-1.5.51-sequoia-arm64.dmg",
+      "sha256": "51b9c2d69740136f53ca998d4d4227b15ad7f99e86ab278421b74460fe63785c"
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.50/vMLX-1.5.50-tahoe-arm64.dmg",
-      "sha256": "96e12d34b4b94aa7f013eae7630c9d35608c46c633f971646806f7caa51ada04"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.51/vMLX-1.5.51-tahoe-arm64.dmg",
+      "sha256": "85b1ccdeb6d94b7319a2a8c430a985b97419214598e2c4e2112187c171c2091b"
     }
   },
-  "notes": "vMLX 1.5.50\n\nHighlights:\n- Ships the current Step/LFM/cache/VL matrix promotion and release packaging fixes for the Python engine and Electron panel.\n- Builds both public DMG flavors from the same source: Sequoia-compatible macosx_14 wheels and Tahoe-native macosx_26 wheels.\n- Ensures bundled Python native executables are signed with hardened runtime before the final app seal so Apple notarization accepts the packaged runtime.\n\nDownloads:\n- The updater manifest points to the Sequoia-compatible DMG, the broadest supported public build.\n- The GitHub release also includes a Tahoe-native DMG for macOS Tahoe users who want native macosx_26 MLX wheels.\n\nVerification:\n- Sequoia and Tahoe DMG containers are Developer ID signed, notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n- Regression manifest prepackage gate passes with DSV4 exactness, #179 reporter parity/root-cause, and the full real-UI matrix explicitly deferred for the emergency release scope.\n\nKnown follow-up:\n- DSV4 Flash long full-output/code-generation exactness remains deferred for a separate exact-code/runtime-quality clearance.\n- #179 MiniMax-K reporter parity/root-cause and the full real Electron UI cross-family matrix remain deferred follow-up work.\n\nDMG SHA256:\n- Sequoia: d898085173011fd287a6ef77d9d608975f6f4c4b0632fe0f7366044f6bda8270\n- Tahoe: 96e12d34b4b94aa7f013eae7630c9d35608c46c633f971646806f7caa51ada04"
+  "notes": "vMLX 1.5.51\n\nHighlights:\n- Ships the current ZAYA VL Responses/native-tool UI fix so built-in tool requests no longer receive the generic agentic prompt that breaks structured function-call arguments.\n- Includes the post-release ZAYA Responses streaming hardening already pushed to vMLX main.\n- Builds both public DMG flavors from the same source: Sequoia-compatible macosx_14 wheels and Tahoe-native macosx_26 wheels.\n- Release signing now explicitly timestamps bundled Python native files and the final app seal.\n\nVerification:\n- ZAYA live Electron-dev proof passed with two real run_command tool turns, cached-token reuse on the second turn, and direct VL image semantics verified as red.\n- Focused panel and ZAYA parser tests passed, plus TypeScript typecheck, py_compile, and diff checks.\n- Sequoia and Tahoe DMG containers are Developer ID signed, notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n- Regression manifest prepackage gate passes with DSV4 exactness, #179 reporter parity/root-cause, and the full real-UI matrix explicitly deferred for this follow-up release scope.\n\nKnown follow-up:\n- DSV4 Flash long full-output/code-generation exactness remains deferred for a separate exact-code/runtime-quality clearance.\n- #179 MiniMax-K reporter parity/root-cause and the full real Electron UI cross-family matrix remain deferred follow-up work.\n\nDMG SHA256:\n- Sequoia: 51b9c2d69740136f53ca998d4d4227b15ad7f99e86ab278421b74460fe63785c\n- Tahoe: 85b1ccdeb6d94b7319a2a8c430a985b97419214598e2c4e2112187c171c2091b"
 }
