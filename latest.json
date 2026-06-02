@@ -1,16 +1,16 @@
 {
-  "version": "1.5.49",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.49/vMLX-1.5.49-sequoia-arm64.dmg",
-  "sha256": "96e693f2cb6a8c476eea079ca8537808a80b5bbc5550d3bf574e0550c00fb2c4",
+  "version": "1.5.50",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.50/vMLX-1.5.50-sequoia-arm64.dmg",
+  "sha256": "d898085173011fd287a6ef77d9d608975f6f4c4b0632fe0f7366044f6bda8270",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.49/vMLX-1.5.49-sequoia-arm64.dmg",
-      "sha256": "96e693f2cb6a8c476eea079ca8537808a80b5bbc5550d3bf574e0550c00fb2c4"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.50/vMLX-1.5.50-sequoia-arm64.dmg",
+      "sha256": "d898085173011fd287a6ef77d9d608975f6f4c4b0632fe0f7366044f6bda8270"
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.49/vMLX-1.5.49-tahoe-arm64.dmg",
-      "sha256": "c121581907aa3adcfefa9f146f158745276823bc457e74fcc28bf9147fac2230"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.50/vMLX-1.5.50-tahoe-arm64.dmg",
+      "sha256": "96e12d34b4b94aa7f013eae7630c9d35608c46c633f971646806f7caa51ada04"
     }
   },
-  "notes": "vMLX 1.5.49\n\nHighlights:\n- Ships the Responses tool-call parser fix so non-streaming /v1/responses extracts tool calls emitted inside reasoning text before finalizing output items.\n- Ships current DSV4 Flash native composite prefix/cache defaults, including the materialized CSA/HCA pool codec fix and generic KV TurboQuant suppression for DSV4.\n- Tightens Qwen3.6 VL/MTP media-request Metal allocator headroom to reduce command-buffer OOM risk on image-heavy chats.\n- Adds chat/API Max Thinking Tokens wiring as a template thinking budget, separate from max output tokens and max context.\n\nDownloads:\n- The updater manifest points to the Sequoia-compatible DMG, the broadest supported public build.\n- The GitHub release also includes a Tahoe-native DMG for macOS Tahoe users who want native macosx_26 MLX wheels.\n\nVerification:\n- Sequoia and Tahoe DMG containers are Developer ID signed, notarized, stapled, and Gatekeeper accepted.\n- Focused release gates passed for DMG signing config, max output/context/thinking-token separation, cache architecture, API/cache, MTP, VL/media, and packaged integrity surfaces.\n\nKnown follow-up:\n- DSV4 Flash long full-output/code-generation exactness remains a documented release exception pending separate exact-code/runtime-quality clearance. DSV4 native cache/tool wiring is treated separately from that quality row.\n\nDMG SHA256: 96e693f2cb6a8c476eea079ca8537808a80b5bbc5550d3bf574e0550c00fb2c4"
+  "notes": "vMLX 1.5.50\n\nHighlights:\n- Ships the current Step/LFM/cache/VL matrix promotion and release packaging fixes for the Python engine and Electron panel.\n- Builds both public DMG flavors from the same source: Sequoia-compatible macosx_14 wheels and Tahoe-native macosx_26 wheels.\n- Ensures bundled Python native executables are signed with hardened runtime before the final app seal so Apple notarization accepts the packaged runtime.\n\nDownloads:\n- The updater manifest points to the Sequoia-compatible DMG, the broadest supported public build.\n- The GitHub release also includes a Tahoe-native DMG for macOS Tahoe users who want native macosx_26 MLX wheels.\n\nVerification:\n- Sequoia and Tahoe DMG containers are Developer ID signed, notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n- Regression manifest prepackage gate passes with DSV4 exactness, #179 reporter parity/root-cause, and the full real-UI matrix explicitly deferred for the emergency release scope.\n\nKnown follow-up:\n- DSV4 Flash long full-output/code-generation exactness remains deferred for a separate exact-code/runtime-quality clearance.\n- #179 MiniMax-K reporter parity/root-cause and the full real Electron UI cross-family matrix remain deferred follow-up work.\n\nDMG SHA256:\n- Sequoia: d898085173011fd287a6ef77d9d608975f6f4c4b0632fe0f7366044f6bda8270\n- Tahoe: 96e12d34b4b94aa7f013eae7630c9d35608c46c633f971646806f7caa51ada04"
 }
