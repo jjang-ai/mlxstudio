@@ -1,16 +1,16 @@
 {
-  "version": "1.5.52",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.52/vMLX-1.5.52-sequoia-arm64.dmg",
-  "sha256": "491734c2acdeb23852a11845b34bf43fd04d2f68f886c07ecfd377a7810d19a2",
+  "version": "1.5.53",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.53/vMLX-1.5.53-sequoia-arm64.dmg",
+  "sha256": "466d6733e1ccff7051fa3c3019d80cf276c39127ab543d9b02cf0e30534eb642",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.52/vMLX-1.5.52-sequoia-arm64.dmg",
-      "sha256": "491734c2acdeb23852a11845b34bf43fd04d2f68f886c07ecfd377a7810d19a2"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.53/vMLX-1.5.53-sequoia-arm64.dmg",
+      "sha256": "466d6733e1ccff7051fa3c3019d80cf276c39127ab543d9b02cf0e30534eb642"
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.52/vMLX-1.5.52-tahoe-arm64.dmg",
-      "sha256": "2347b0f6ca600296bc43e2c0c5b22c9417eb6344eae10d1646bb2b942a38c1c6"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.53/vMLX-1.5.53-tahoe-arm64.dmg",
+      "sha256": "9516b8a8204e4eb8629f717958ef0e0d17d1def323aac0734f8d6b6f44dceee4"
     }
   },
-  "notes": "vMLX 1.5.52\n\nHighlights:\n- Shows and applies explicit model-owned greedy generation defaults from JANG model metadata, including temperature 0.00, top-p 1.0, and top-k off when the bundle declares them.\n- Updates the local Step-3.7-Flash JANG metadata path so startup settings derive from model files instead of hidden app-side sampling assumptions.\n- Carries the 1.5.51 ZAYA VL Responses/native-tool UI fix and streaming hardening.\n- Builds both public DMG flavors from the same source: Sequoia-compatible macosx_14 wheels and Tahoe-native macosx_26 wheels.\n\nVerification:\n- Focused generation-default tests passed in panel and engine; the local Step-3.7-Flash JANG bundle resolves default temperature=0.0, top_p=1.0, top_k=0, while explicit request params still override model defaults.\n- The generation-defaults cross-matrix contract passed before packaging.\n- Bundled Python verification passed for vMLX 1.5.52 and local JANG tools, including critical TurboQuant, Hadamard, VLM, MiniCPM remap, Step3p7 VLM, and MLA patch import gates.\n- Sequoia and Tahoe DMG containers are Developer ID signed, notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n\nKnown follow-up:\n- DSV4 Flash long full-output/code-generation exactness remains deferred for a separate exact-code/runtime-quality clearance.\n- #179 MiniMax-K reporter parity/root-cause and the full real Electron UI cross-family matrix remain deferred follow-up work.\n\nDMG SHA256:\n- Sequoia: 491734c2acdeb23852a11845b34bf43fd04d2f68f886c07ecfd377a7810d19a2\n- Tahoe: 2347b0f6ca600296bc43e2c0c5b22c9417eb6344eae10d1646bb2b942a38c1c6"
+  "notes": "vMLX 1.5.53\n\nHighlights:\n- Fixes adopted running sessions so model-owned generation defaults from JANG bundle metadata are applied before the app saves the session config.\n- Keeps Step-3.7-Flash and other JANG startup settings derived from model files, including explicit greedy defaults such as temperature 0.00, top-p 1.0, and top-k off when declared by the bundle.\n- Carries the 1.5.52 public release fixes for model-owned generation defaults, Step metadata, ZAYA VL Responses/native-tool UI, streaming hardening, and Sequoia/Tahoe split wheels.\n- Builds both public DMG flavors from the same source: Sequoia-compatible macosx_14 wheels and Tahoe-native macosx_26 wheels.\n\nVerification:\n- Panel generation-default and settings-flow focused tests passed; adopted running sessions now apply bundle startup defaults before persisting config.\n- The generation-defaults cross-matrix contract passed before packaging.\n- Bundled Python verification passed for vMLX 1.5.53 and local JANG tools, including critical TurboQuant, Hadamard, VLM, MiniCPM remap, Step3p7 VLM, and MLA patch import gates.\n- Sequoia and Tahoe DMG containers are Developer ID signed, notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n\nKnown follow-up:\n- DSV4 Flash long full-output/code-generation exactness remains deferred for a separate exact-code/runtime-quality clearance.\n- Full real Electron UI cross-family live model matrix remains deferred follow-up work beyond this emergency release.\n\nDMG SHA256:\n- Sequoia: 466d6733e1ccff7051fa3c3019d80cf276c39127ab543d9b02cf0e30534eb642\n- Tahoe: 9516b8a8204e4eb8629f717958ef0e0d17d1def323aac0734f8d6b6f44dceee4"
 }
