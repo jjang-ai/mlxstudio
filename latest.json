@@ -1,16 +1,10 @@
 {
-  "version": "1.5.58",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.58/vMLX-1.5.58-sequoia-arm64.dmg",
-  "sha256": "71925fa21857a631c7fdddfd14b217cef8e076a3ce88fb82439672a0196bd7f4",
+  "version": "1.5.60",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.60/vMLX-1.5.60-arm64.dmg",
+  "sha256": "a82158c045658ed3bb0c834fd25abeb4bf80948f3e7d4260af8d325d0f756c48",
   "downloads": {
-    "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.58/vMLX-1.5.58-sequoia-arm64.dmg",
-      "sha256": "71925fa21857a631c7fdddfd14b217cef8e076a3ce88fb82439672a0196bd7f4"
-    },
-    "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.58/vMLX-1.5.58-tahoe-arm64.dmg",
-      "sha256": "ffa671547b0de037d9e5257589f29d8e29c5cebb7358c127ed0a90b6925040dc"
-    }
+    "sequoia": { "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.60/vMLX-1.5.60-arm64.dmg", "sha256": "a82158c045658ed3bb0c834fd25abeb4bf80948f3e7d4260af8d325d0f756c48" },
+    "tahoe": { "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.60/vMLX-1.5.60-arm64.dmg", "sha256": "a82158c045658ed3bb0c834fd25abeb4bf80948f3e7d4260af8d325d0f756c48" }
   },
-  "notes": "vMLX 1.5.58 checkpoint release\n\nHighlights:\n- Fresh signed and notarized checkpoint build from current vMLX Python engine/app source at commit 08d8fcc5d.\n- Bundles vmlx_engine 1.5.58 and the current jang 2.5.31 runtime package surface.\n- Carries the current Qwen/Qwen-coder Responses tool-call streaming fixes, missing required argument fail-closed behavior, function-call argument delta/done surfaces, output-index validation, and tool-result continuation.\n- Carries current Gemma4/JANG/QAT/MXFP runtime and bundled-app parity fixes, including Gemma4 unified runtime registration and JANG/JANGTQ loader parity.\n- Keeps release manifest truth visible: this is a usable checkpoint release, not a claim that every open runtime/model-family row is production-green.\n\nVerification:\n- Built Sequoia and Tahoe arm64 DMGs from vMLX 1.5.58 source at commit 08d8fcc5d.\n- Bundled Python verified vMLX engine version 1.5.58, critical vMLX source hash parity, critical jang_tools source hash parity, relocatable console-script shebangs, and critical runtime imports.\n- Sequoia DMG accepted by Apple notarization id d94933ed-ba35-4d45-a4f5-5e9c8ce8ff1a, stapled, Gatekeeper accepted, and verified by panel/scripts/verify-release-dmgs.sh.\n- Tahoe DMG accepted by Apple notarization id 8615b942-0b30-4aea-a805-f62c49895ca2, stapled, Gatekeeper accepted, and verified by panel/scripts/verify-release-dmgs.sh.\n- Checkpoint prepackage manifest was generated with explicit override because the full live model matrix still has open rows.\n\nKnown follow-up:\n- This checkpoint does not claim full production-green status for all large model-family rows.\n- Remaining proof work includes selected deployed/tunnel parity, larger live model-family rows, UI/media rows, and PyPI publishing configuration.\n\nDMG SHA256:\n- Sequoia: 71925fa21857a631c7fdddfd14b217cef8e076a3ce88fb82439672a0196bd7f4\n- Tahoe: ffa671547b0de037d9e5257589f29d8e29c5cebb7358c127ed0a90b6925040dc"
+  "notes": "vMLX 1.5.60\n\nHighlights:\n- MiniMax-M3 vision (VL) end-to-end, multi-turn image conversations (latest image replaces prior, no blending).\n- MiniMax-M3 ~2.4x decode speedup via bf16 residual cast (sustained 23-29 tok/s, coherent).\n- MiniMax-M3 MSA dual-cache forced paged (rescue); cache UI shows only M3-applicable options.\n- Phase-1 cache policy (paged off by default, SSD prefix default); JANG Tier-1 family fallback.\n\nVerification:\n- Notarized + stapled compat arm64 DMG from source commit de9b39609; Gatekeeper accepted; bundled vmlx_engine 1.5.60.\n- M3 VL multi-turn + speed proven live in the dev-build app (25-37 tok/s, retained history).\n\nDMG SHA256: a82158c045658ed3bb0c834fd25abeb4bf80948f3e7d4260af8d325d0f756c48"
 }
