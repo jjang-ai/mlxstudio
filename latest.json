@@ -1,16 +1,16 @@
 {
-  "version": "1.5.63",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.63/vMLX-1.5.63-sequoia-arm64.dmg",
-  "sha256": "0be2ad302ae391efb7a1af2203db831162f60ec8271bd30a071a8c48e303c0dc",
+  "version": "1.5.64",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.64/vMLX-1.5.64-sequoia-arm64.dmg",
+  "sha256": "c53cfaa2e4c041280932fd06741847176a83066f5be5f01b3cdef47cafa8bf40",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.63/vMLX-1.5.63-sequoia-arm64.dmg",
-      "sha256": "0be2ad302ae391efb7a1af2203db831162f60ec8271bd30a071a8c48e303c0dc"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.64/vMLX-1.5.64-sequoia-arm64.dmg",
+      "sha256": "c53cfaa2e4c041280932fd06741847176a83066f5be5f01b3cdef47cafa8bf40"
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.63/vMLX-1.5.63-tahoe-arm64.dmg",
-      "sha256": "aff1cc423dff786282d7f8e9fc2e1022d763b435a4e2d6e09bc941394d768a30"
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.64/vMLX-1.5.64-tahoe-arm64.dmg",
+      "sha256": "e8e01928908d7c58e82b5c9916ff129ef718d46e90e4b0e6d580ac822680161f"
     }
   },
-  "notes": "vMLX 1.5.63\n\nHighlights:\n- MiniMax-M3 compatibility update focused on REAP40-d3 loading, multimodal routing, reasoning controls, tool calls, and cache-hit stability.\n- Gemma 4 E2B/E4B/12B MXFP4 vision/text compatibility update with live UI and API coverage.\n- Model-owned generation defaults are preserved for supported startup paths.\n- MiniMax-M3 keeps its native MSA/Lightning sparse cache policy: paged cache off, TurboQuant KV skipped for native MSA, and JIT disabled for the dynamic sparse-cache path.\n- Gemma audio is not advertised in this release unless explicitly proven by the artifact/runtime.\n\nVerification:\n- vMLX main source commit: 12382f2a5.\n- MM3 installed-app stress covered 10 UI turns, reasoning off/on/auto, tool calls, image input, long-context recall, prefix-cache hits, Chat/Responses/Anthropic/Ollama, and streaming tool/image surfaces.\n- Gemma 4 E2B/E4B/12B MXFP4 installed-app stress covered 10 UI turns, reasoning off/on/auto, image input, tool calls, cache hits, Chat/Responses/Anthropic/Ollama, and streaming rows.\n- Sequoia and Tahoe DMGs are Developer ID signed, Apple notarized, stapled, and Gatekeeper accepted.\n\nArtifacts:\n- Sequoia DMG SHA256: 0be2ad302ae391efb7a1af2203db831162f60ec8271bd30a071a8c48e303c0dc\n- Tahoe DMG SHA256: aff1cc423dff786282d7f8e9fc2e1022d763b435a4e2d6e09bc941394d768a30\n\nScope:\n- This is a scoped MM3 + Gemma 4 VL compatibility release. Broader model-family matrix work continues in the next release line."
+  "notes": "vMLX 1.5.64\n\nHighlights:\n- MiniMax-M3 compatibility update with stricter exact-output coverage for live UI, Chat Completions, Responses, Anthropic-compatible, Ollama-compatible, and streaming tool/image paths.\n- MiniMax-M3 startup keeps prefix cache enabled, paged cache disabled, disk prompt cache enabled, JIT disabled, and native MSA/Lightning sparse cache storage with generic TurboQuant KV disabled.\n- Gemma 4 E2B/E4B/12B/26B/31B JANG_4M VL and 26B/31B MXFP4 visual rows were refreshed with live UI/API/cache coverage.\n- Streaming reasoning-only responses now get a bounded visible-answer pass for supported reasoning models instead of appearing blank when the model emits hidden reasoning only.\n- Model-owned generation defaults continue to be surfaced in the UI and applied to API/chat startup paths.\n\nVerification:\n- vMLX main source commit: 701411284.\n- MM3 installed-app stress covered 10 UI turns, reasoning off/on/auto, exact tool calls, image input, long-context recall, prefix-cache hits, Chat/Responses/Anthropic/Ollama, and streaming tool/image exactness.\n- MM3 clean-start proof confirmed enablePrefixCache=true, usePagedCache=false, enableDiskCache=true, enableJit=false, toolCallParser=minimax_m3, reasoningParser=minimax_m3, and native minimax_m3_msa_v1 cache telemetry.\n- Gemma 4 E2B/E4B/12B/26B/31B JANG_4M VL and 26B/31B MXFP4 visual installed-app stress covered 10 UI turns, reasoning off/on/auto, image input, tool calls, cache hits, Chat/Responses/Anthropic/Ollama, and streaming rows.\n- Sequoia and Tahoe DMGs are Developer ID signed, Apple notarized, stapled, and Gatekeeper accepted.\n\nArtifacts:\n- Sequoia DMG SHA256: c53cfaa2e4c041280932fd06741847176a83066f5be5f01b3cdef47cafa8bf40\n- Tahoe DMG SHA256: e8e01928908d7c58e82b5c9916ff129ef718d46e90e4b0e6d580ac822680161f\n\nScope:\n- This is a scoped MM3 + Gemma 4 VL compatibility release. Gemma audio remains out of this release gate. Broader model-family matrix work continues in the next release line."
 }
