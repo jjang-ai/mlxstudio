@@ -1,19 +1,19 @@
 {
-  "version": "1.5.66",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.66/vMLX-1.5.66-sequoia-arm64.dmg",
-  "sha256": "c763a64a307269988e92f4334eaf31a3946cf05bf09a76363c4aad5d3f301721",
-  "sha512": "xtgKAxZM9KHuAW233mg2iXVL7sBgsTbmKjPagm+Xb+BgjWvWTT8K+2IXIE6/QTeCFeBsFv2+m90pSWdrAc8XAg==",
+  "version": "1.5.67",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.67/vMLX-1.5.67-sequoia-arm64.dmg",
+  "sha256": "b2ed3947aacf03e37f7f375656c3268194c38988ae7c812b64645207385ef27c",
+  "sha512": "TTOHAX8BSAxYySd3vZKpJvQboSB2078xv9PIjHm9KtIAHVkRyM40uw+2QsxpSX8Fh6fPl3dCJTjDiB0bGd8E5w==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.66/vMLX-1.5.66-sequoia-arm64.dmg",
-      "sha256": "c763a64a307269988e92f4334eaf31a3946cf05bf09a76363c4aad5d3f301721",
-      "sha512": "xtgKAxZM9KHuAW233mg2iXVL7sBgsTbmKjPagm+Xb+BgjWvWTT8K+2IXIE6/QTeCFeBsFv2+m90pSWdrAc8XAg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.67/vMLX-1.5.67-sequoia-arm64.dmg",
+      "sha256": "b2ed3947aacf03e37f7f375656c3268194c38988ae7c812b64645207385ef27c",
+      "sha512": "TTOHAX8BSAxYySd3vZKpJvQboSB2078xv9PIjHm9KtIAHVkRyM40uw+2QsxpSX8Fh6fPl3dCJTjDiB0bGd8E5w=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.66/vMLX-1.5.66-tahoe-arm64.dmg",
-      "sha256": "fcd1ea2eada1ec4df85dac21f56ccfbeed2aba2229ea2905625a869c45a0845b",
-      "sha512": "Vkq3l4ANUNYvnfKDRdzrZOZWKKJIkvDXS0p0+nG7Q/CvOs0V64lOE6Wz4+5bxXZVwHrSUJg8Zc7UsAynouBiQA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.67/vMLX-1.5.67-tahoe-arm64.dmg",
+      "sha256": "7cbefc2a79f436931ea762221b91cc8843f558fad1aeb2906ca5d2c9fa182074",
+      "sha512": "2kJkmO+UTw/al2WOofTtF/3FCV4aszjJikQEK2AF+oXOMQcVD+nXVhjVS2vZgMWBaxcujnTv8rrkraHefbegTA=="
     }
   },
-  "notes": "vMLX 1.5.66\n\nHighlights:\n- MiniMax-M3 autodetection, reasoning/tool parser wiring, model-owned generation defaults, and native MSA prefix-cache handling.\n- UI/CLI settings parity for MiniMax-M3 launch defaults, including visible model-owned max output behavior.\n- User-facing Metal wired-memory guidance for Insufficient Memory launch failures.\n- Gemma 4 VL settings and media stress harness coverage retained for the scoped release path.\n\nVerification:\n- Source stamps are aligned at 1.5.66.\n- Installed app live proof passed MiniMax-M3 clean-start autodetect and 10-turn stress with reasoning on/off/auto, VL image, tool calls, Chat Completions, Responses, Anthropic, Ollama, streaming, and prefix-cache hits.\n- Gemma 4 E2B VL/settings stress proof passed for the scoped release path.\n- Sequoia and Tahoe DMGs are Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n\nKnown follow-up:\n- Broader non-scoped model-family matrix rows remain for the next release.\n- Gemma mixed-SWA TurboQuant-KV telemetry remains a v1.5.67 hardening row.\n\nDMG SHA256:\n- Sequoia: c763a64a307269988e92f4334eaf31a3946cf05bf09a76363c4aad5d3f301721\n- Tahoe: fcd1ea2eada1ec4df85dac21f56ccfbeed2aba2229ea2905625a869c45a0845b"
+  "notes": "vMLX 1.5.67\n\nHighlights:\n- MiniMax-M3 scoped compatibility release path retained from 1.5.66 with autodetection, reasoning/tool parser wiring, model-owned generation defaults, and native MSA prefix-cache handling.\n- Release preflight now accepts the 1.5.67 source/version lane and checks required Gemma 4 serving generation metadata for non-diffusion Gemma 4 rows.\n- Bundled runtime is built from clean JANG tools source and verifies critical vmlx_engine, JANG tools, Gemma 4, MLX, and mlx-vlm imports during packaging.\n\nVerification:\n- Source stamps are aligned at 1.5.67.\n- Scoped release preflight passed for expected version 1.5.67 before packaging.\n- Bundled Python verification passed for vmlx_engine 1.5.67 and critical bundled JANG/Gemma/MLX runtime imports.\n- Sequoia and Tahoe DMGs are Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n\nKnown follow-up:\n- Final-DMG live UI model stress was not rerun in this packaging pass; keep the broader MM3/Gemma live matrix open for the next release lane.\n- Broader non-scoped model-family matrix rows remain for follow-up.\n\nDMG SHA256:\n- Sequoia: b2ed3947aacf03e37f7f375656c3268194c38988ae7c812b64645207385ef27c\n- Tahoe: 7cbefc2a79f436931ea762221b91cc8843f558fad1aeb2906ca5d2c9fa182074"
 }
