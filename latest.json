@@ -1,19 +1,19 @@
 {
-  "version": "1.5.67",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.67/vMLX-1.5.67-sequoia-arm64.dmg",
-  "sha256": "b2ed3947aacf03e37f7f375656c3268194c38988ae7c812b64645207385ef27c",
-  "sha512": "TTOHAX8BSAxYySd3vZKpJvQboSB2078xv9PIjHm9KtIAHVkRyM40uw+2QsxpSX8Fh6fPl3dCJTjDiB0bGd8E5w==",
+  "version": "1.5.68",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.68/vMLX-1.5.68-sequoia-arm64.dmg",
+  "sha256": "489a10b31a0c12d5e1c6d804a4f7778752394d243f7950ca6a04155adb17fd5c",
+  "sha512": "VrBqYIjBaOaiC/zkvEiSaXPIUibc0ducyZRxiXayVh52jtImeo7V6KMl/b+JEP2v7frTWp7qHR2gsSuPFMfjiA==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.67/vMLX-1.5.67-sequoia-arm64.dmg",
-      "sha256": "b2ed3947aacf03e37f7f375656c3268194c38988ae7c812b64645207385ef27c",
-      "sha512": "TTOHAX8BSAxYySd3vZKpJvQboSB2078xv9PIjHm9KtIAHVkRyM40uw+2QsxpSX8Fh6fPl3dCJTjDiB0bGd8E5w=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.68/vMLX-1.5.68-sequoia-arm64.dmg",
+      "sha256": "489a10b31a0c12d5e1c6d804a4f7778752394d243f7950ca6a04155adb17fd5c",
+      "sha512": "VrBqYIjBaOaiC/zkvEiSaXPIUibc0ducyZRxiXayVh52jtImeo7V6KMl/b+JEP2v7frTWp7qHR2gsSuPFMfjiA=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.67/vMLX-1.5.67-tahoe-arm64.dmg",
-      "sha256": "7cbefc2a79f436931ea762221b91cc8843f558fad1aeb2906ca5d2c9fa182074",
-      "sha512": "2kJkmO+UTw/al2WOofTtF/3FCV4aszjJikQEK2AF+oXOMQcVD+nXVhjVS2vZgMWBaxcujnTv8rrkraHefbegTA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.68/vMLX-1.5.68-tahoe-arm64.dmg",
+      "sha256": "8cb843c624e20aeab7daafe4ac13ccaa1d0cc387ce8b903dfa0ef9b725b47c8f",
+      "sha512": "QzMaGHW2fxleBAgQCRQC2PtGxd6kaVRZW+W32DjgaBcAMgLY/jjVjcp7fjsoPRD3orHXsJTLht7KKqeFX7ryKg=="
     }
   },
-  "notes": "vMLX 1.5.67\n\nHighlights:\n- MiniMax-M3 scoped compatibility release path retained from 1.5.66 with autodetection, reasoning/tool parser wiring, model-owned generation defaults, and native MSA prefix-cache handling.\n- Release preflight now accepts the 1.5.67 source/version lane and checks required Gemma 4 serving generation metadata for non-diffusion Gemma 4 rows.\n- Bundled runtime is built from clean JANG tools source and verifies critical vmlx_engine, JANG tools, Gemma 4, MLX, and mlx-vlm imports during packaging.\n\nVerification:\n- Source stamps are aligned at 1.5.67.\n- Scoped release preflight passed for expected version 1.5.67 before packaging.\n- Bundled Python verification passed for vmlx_engine 1.5.67 and critical bundled JANG/Gemma/MLX runtime imports.\n- Sequoia and Tahoe DMGs are Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, Gatekeeper accepted, and verified by the release DMG verifier.\n\nKnown follow-up:\n- Final-DMG live UI model stress was not rerun in this packaging pass; keep the broader MM3/Gemma live matrix open for the next release lane.\n- Broader non-scoped model-family matrix rows remain for follow-up.\n\nDMG SHA256:\n- Sequoia: b2ed3947aacf03e37f7f375656c3268194c38988ae7c812b64645207385ef27c\n- Tahoe: 7cbefc2a79f436931ea762221b91cc8843f558fad1aeb2906ca5d2c9fa182074"
+  "notes": "vMLX 1.5.68\n\nHighlights:\n- MiniMax-M3 + Gemma 4 scoped compatibility release. Both families verified end-to-end on the shipping build: autodetection, reasoning/tool parser wiring, model-owned generation defaults, native MSA prefix-cache (M3) and mixed-SWA cache (Gemma 4).\n- Native built-in run_command tool now executes via /bin/bash, so commands like `echo -n` write exact file contents (previously a literal `-n ` prefix could be written under /bin/sh).\n- MiniMax-M3 autodetection log now reports tq_kv=SKIP(native MSA), accurately reflecting that generic TurboQuant KV is structurally skipped for the native MSA cache.\n- MiniMax-M3 long-generation defaults applied for model-owned sessions: 900s timeout and 8192 max output tokens.\n- Wired-limit tuning lets large models use maximum available RAM without OOM.\n\nVerification:\n- Source stamps aligned at 1.5.68; scoped release preflight passed (MM3 + Gemma 4 gateway/lifecycle/stress + Gemma VL media).\n- Sequoia and Tahoe DMGs are Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, and Gatekeeper accepted.\n- Post-sign smoke test on the notarized app: MiniMax-M3-Coder-Small and Gemma 4 12B load and respond coherently.\n\nDMG SHA256:\n- Sequoia: 489a10b31a0c12d5e1c6d804a4f7778752394d243f7950ca6a04155adb17fd5c\n- Tahoe: 8cb843c624e20aeab7daafe4ac13ccaa1d0cc387ce8b903dfa0ef9b725b47c8f"
 }
