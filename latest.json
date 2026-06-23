@@ -1,16 +1,16 @@
 {
   "version": "1.5.69",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-arm64.dmg",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-sequoia-arm64.dmg",
   "sha256": "803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6",
   "sha512": "0XAi2F2YiYFfvhcm+iXIGBjD4wSz5a78C/90S+cXc4XYAsFkDkbm30aVEbKvWbhwXY/Ni56+A8wwQvNmk+Chsg==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-arm64.dmg",
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-sequoia-arm64.dmg",
       "sha256": "803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6",
       "sha512": "0XAi2F2YiYFfvhcm+iXIGBjD4wSz5a78C/90S+cXc4XYAsFkDkbm30aVEbKvWbhwXY/Ni56+A8wwQvNmk+Chsg=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-arm64.dmg",
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-tahoe-arm64.dmg",
       "sha256": "803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6",
       "sha512": "0XAi2F2YiYFfvhcm+iXIGBjD4wSz5a78C/90S+cXc4XYAsFkDkbm30aVEbKvWbhwXY/Ni56+A8wwQvNmk+Chsg=="
     }
