@@ -1,19 +1,19 @@
 {
-  "version": "1.5.69",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-sequoia-arm64.dmg",
-  "sha256": "803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6",
-  "sha512": "0XAi2F2YiYFfvhcm+iXIGBjD4wSz5a78C/90S+cXc4XYAsFkDkbm30aVEbKvWbhwXY/Ni56+A8wwQvNmk+Chsg==",
+  "version": "1.6.2",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.2/vMLX-1.6.2-sequoia-arm64.dmg",
+  "sha256": "b010441bd6396d060388519f9be2298ce10217d024f9543297c57de6c5e67a38",
+  "sha512": "VvzhPKTXargwJU79yTgnkNCpRBjRT7n1ZnTX69Zfx+MR0F5XulnyfyG2g3Z2ZYmwUznRjdJBWFngb/xhpPg1MA==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-sequoia-arm64.dmg",
-      "sha256": "803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6",
-      "sha512": "0XAi2F2YiYFfvhcm+iXIGBjD4wSz5a78C/90S+cXc4XYAsFkDkbm30aVEbKvWbhwXY/Ni56+A8wwQvNmk+Chsg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.2/vMLX-1.6.2-sequoia-arm64.dmg",
+      "sha256": "b010441bd6396d060388519f9be2298ce10217d024f9543297c57de6c5e67a38",
+      "sha512": "VvzhPKTXargwJU79yTgnkNCpRBjRT7n1ZnTX69Zfx+MR0F5XulnyfyG2g3Z2ZYmwUznRjdJBWFngb/xhpPg1MA=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.5.69/vMLX-1.5.69-tahoe-arm64.dmg",
-      "sha256": "803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6",
-      "sha512": "0XAi2F2YiYFfvhcm+iXIGBjD4wSz5a78C/90S+cXc4XYAsFkDkbm30aVEbKvWbhwXY/Ni56+A8wwQvNmk+Chsg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.2/vMLX-1.6.2-tahoe-arm64.dmg",
+      "sha256": "b010441bd6396d060388519f9be2298ce10217d024f9543297c57de6c5e67a38",
+      "sha512": "VvzhPKTXargwJU79yTgnkNCpRBjRT7n1ZnTX69Zfx+MR0F5XulnyfyG2g3Z2ZYmwUznRjdJBWFngb/xhpPg1MA=="
     }
   },
-  "notes": "vMLX 1.5.69\n\nHighlights:\n- Reasoning-runaway backstop for the Qwen 3.5/3.6 family: degraded quants (e.g. MXFP4-CRACK) that could fill their thinking block without ever closing it — returning an empty answer — now fall back to a bounded thinking-off pass and always emit a visible answer. Applied across all four API surfaces (chat/completions, responses, ollama, anthropic) for both streaming and non-streaming, and the same backstop is now extended to the non-streaming paths for MiniMax-M3 and Gemma 4. No-op for healthy reasoners (only fires when a turn produced reasoning but no content).\n- ZAYA1-8B loads coherently: the JANG loader now trusts ZAYA per-module quantization overrides and routes legacy format-envelope weight_format values through the JANG-native loader.\n\nVerification:\n- DMG is Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, and Gatekeeper accepted.\n- Post-build smoke test on the notarized app from a fresh DMG install: Qwen3.6-27B (native MTP, depth 3) loads and chats coherently, and the reasoning backstop is confirmed live in the signed build.\n\nDMG SHA256:\n- 803a153b971babd18dcbf905fa56b9bd5373e5970cde293d5f4bee19dd9782e6"
+  "notes": "vMLX 1.6.2\n\nFirst public 1.6 release — the full vendored-VLM + continuous-batching line, now stabilized and validated across the model family.\n\nHighlights:\n- Vendored vision/video runtime: vMLX now owns the Qwen 3.5 / 3.6 and Gemma 4 VLM paths (and Ornith), so image + video turns no longer depend on external VLM code drift. Affine-JANG Qwen VL bundles are routed to the VLM path correctly.\n- openPangu-2.0-Flash: full engine integration — vendored runtime + autodetect, native <|tool_call_start|> JSON-list tool parser, thinking On/Off/Auto mapping, MLA prefill fix, and an honest reasoning-budget backstop (no forced token ceilings).\n- Continuous-batching multi-client stability: fixed engine aborts under concurrent clients, the Zaya CCA concurrency crash, the Gemma-4 concurrent token-loop collapse, and the openPangu cache-filter crash. Multi-client + multiturn now hold coherently.\n- Gemma-4 prefix-cache correctness: RotatingKVCache is isolate-cloned on fetch, so repeated same-prompt turns no longer diverge or drop tool calls after cache reuse.\n- Quant-coherence regressions fixed: the Qwen 3.5 +1 RMSNorm shift is now gated to the Qwen family only, restoring coherent output for MiniMax-M2.7 and DeepSeek-V4-Flash (both previously collapsed to a single repeated token).\n- Tool-calling parsers hardened: Qwen tolerates attribute-form function/parameter tags; Step-3.7 emits <args><name>value</name> arguments and is now parsed into structured tool_calls; streaming tool_calls carry consistent ids and end the turn with finish_reason=tool_calls.\n- Honest reasoning budgets: the resolved max_tokens is enforced across the answer pass and cache-error restarts (no runaway, no injected stop tokens).\n- Cache defaults: paged cache defaults OFF for standard families (structural/hybrid families keep it internally by design); prefix + SSD block cache on.\n- Native MTP depth-3 speculative decoding for Qwen CRACK-MTP bundles.\n- Compatibility with transformers >= 5.13.\n\nVerification:\n- Live cross-model matrix (external-drive JANG/MXFP4 bundles, Apple Silicon): Gemma-4 (JANG + MXFP4), Qwen3.6-35B MXFP4 native-MTP depth 3, Step-3.7-Flash, Nemotron-Omni (including real audio transcription), and LFM2.5-8B — validated across text, reasoning On/Off/Auto, tool calls in every reasoning mode, vision, audio, multiturn recall, the Ollama + Anthropic gateways, and live generation-config controls in the Chat settings. Every turn read for coherence, looping, and reasoning/tool leakage.\n- No test regressions attributable to the release changes.\n- DMG is Developer ID signed (team 55KGF2S5AY), Apple notarized, stapled, and Gatekeeper accepted; runs on macOS Sequoia and Tahoe (Apple Silicon).\n\nDMG SHA256:\n- b010441bd6396d060388519f9be2298ce10217d024f9543297c57de6c5e67a38"
 }
