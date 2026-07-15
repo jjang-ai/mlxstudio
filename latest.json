@@ -1,19 +1,19 @@
 {
-  "version": "1.6.9",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.9/vMLX-1.6.9-sequoia-arm64.dmg",
-  "sha256": "16dced0093fe142554d0236ea21c0b9aed3ed5f36d02d5bceac83569df5d6f62",
-  "sha512": "AtG4icDNl4IfdCAV0FFBydnPk9uQZDi7bj0zxuJlrA3hj9ikbtnEqiNqTxTr7e4moymC2EQgrcc6oZtSs0G/2Q==",
+  "version": "1.6.10",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.10/vMLX-1.6.10-sequoia-arm64.dmg",
+  "sha256": "2f19a060668cef6bba3b378b579745bcf0f1372a3bddb1ff2a0a2eb566c96ba1",
+  "sha512": "44N5bJU2AyFWpxnHCTKJwo5IFGt2KajPcZkpFBt8kUwPClfwzajvkF53CGrdHD/R/9Dd+T6KJK52RtwD95AQIg==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.9/vMLX-1.6.9-sequoia-arm64.dmg",
-      "sha256": "16dced0093fe142554d0236ea21c0b9aed3ed5f36d02d5bceac83569df5d6f62",
-      "sha512": "AtG4icDNl4IfdCAV0FFBydnPk9uQZDi7bj0zxuJlrA3hj9ikbtnEqiNqTxTr7e4moymC2EQgrcc6oZtSs0G/2Q=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.10/vMLX-1.6.10-sequoia-arm64.dmg",
+      "sha256": "2f19a060668cef6bba3b378b579745bcf0f1372a3bddb1ff2a0a2eb566c96ba1",
+      "sha512": "44N5bJU2AyFWpxnHCTKJwo5IFGt2KajPcZkpFBt8kUwPClfwzajvkF53CGrdHD/R/9Dd+T6KJK52RtwD95AQIg=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.9/vMLX-1.6.9-tahoe-arm64.dmg",
-      "sha256": "85471b28c1616e83eb84bd67aea2248fd67d039ea5e2c94ff0207a926aadd453",
-      "sha512": "e17yEJiOWW3hyscRt3fOFTqMMJmj9afBDTntQ+92xOEWZy+7ZISbyEnPM0IqaKckmHE0OxedZwS8cFzw+aNAtg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.10/vMLX-1.6.10-tahoe-arm64.dmg",
+      "sha256": "59d8b087af8c9820e224ba96fe1419350d7da3e7ffceeaca9c5c2c7cab7da9a7",
+      "sha512": "AYCBQJOSOv2YNvAuWg8qYImCUlhSsftpOJXddOKkofU7OBz5L8ii3Tl5G0IeL9xtpiuPfleMSrIpUJqYzosx7Q=="
     }
   },
-  "notes": "vMLX 1.6.9\n\nTool-calling correctness and settings parity. Follows 1.6.8's reasoning-budget and cache-control work.\n\nFixed:\n- Tool-call history is no longer duplicated across turns. Each assistant turn was persisting the union of every prior turn's tool calls and results, which was replayed and re-accumulated next turn; prompt size grew super-linearly and the model could run out of budget mid-answer and return an empty or truncated reply after its reasoning. Each turn now persists only its own tool exchange, so the prompt grows linearly with real conversation length. Verified live: a four-turn tool-calling session over CDP showed linear prompt growth (1465 -> 1641 -> 1817 -> 1946 tokens), correct final-turn recall, and a byte-identical determinism re-run.\n- Parser \"None\" selections are honored again. Choosing None for the tool-call or reasoning parser was dropped and re-autodetected; the app now emits explicit --tool-call-parser none / --reasoning-parser none. Auto still autodetects.\n- Launch-command preview parity for text-only VL and MiniMax-M3. The Settings preview now matches what the app launches: a vision model with multimodal Force-Off shows --text-only (not --is-mllm), and MiniMax-M3 shows neither flag.\n\nVerification: API/CLI streaming parity (separate reasoning/answer deltas, per-chunk usage, correct finish_reason); full Python suite green; panel vitest green; all UI strings translated across the five shipped locales. Both DMGs are Developer ID signed (team 55KGF2S5AY), Apple notarized, stapled, and Gatekeeper accepted.\n\nFlavors: sequoia (macosx_14 wheels; Sonoma 14.5+, Sequoia 15, Tahoe) and tahoe (native macosx_26 wheels; Tahoe only).\n\nDMG SHA256:\n- vMLX-1.6.9-sequoia-arm64.dmg: 16dced0093fe142554d0236ea21c0b9aed3ed5f36d02d5bceac83569df5d6f62\n- vMLX-1.6.9-tahoe-arm64.dmg: 85471b28c1616e83eb84bd67aea2248fd67d039ea5e2c94ff0207a926aadd453"
+  "notes": "vMLX 1.6.10\n\nUrgent Bonsai affine-1 runtime and paged L2 cache release.\n\nHighlights:\n- Adds schema-2 affine1 and ternary JANG loading for text and vision-language models, including lossless 1-bit code widening for native MLX quantized kernels and per-module quantization overrides.\n- Live packaged-app verification covered Bonsai-27b-1bit-JANG hybrid GDN/SSM plus attention, TurboQuant attention KV, async clean-prefill rederive, reasoning Auto/Off/On, and multi-turn requests through /v1/responses.\n- Paged block-disk L2 cache is enabled by default in the engine and UI; request cleanup now performs eviction and L2 writes correctly. Live cache telemetry showed prefix reuse, paged plus SSM cached tokens, disk hits, writes, and companion-state stores.\n- Chat Settings visibly reflected bundle-derived generation defaults: temperature 1.00, top-p 0.95, top-k 20, repetition penalty 1.00, and bundle-owned max tokens.\n- Built-in run_command was invoked and executed from the final packaged Electron UI. Bonsai post-tool continuation can still over-generate after an empty continuation; that follow-up is not claimed fixed in this release.\n\nVerification:\n- Source commit 693b2d08302aa31fc0dda6f50a441250fc1dcfb1.\n- 276 focused engine tests passed; 2206 panel tests passed with 3 skipped; TypeScript typecheck passed.\n- Both DMGs are Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, and Gatekeeper accepted. Notarization IDs: Sequoia 7b8eda7e-1713-4878-8a22-150d738e8763; Tahoe a7d4fe5c-27ed-4f9b-b79c-a7a39344e5ed.\n\nFlavors: sequoia (macosx_14 wheels; Sonoma 14.5+, Sequoia 15, Tahoe) and tahoe (native macosx_26 wheels; Tahoe only).\n\nDMG SHA256:\n- vMLX-1.6.10-sequoia-arm64.dmg: 2f19a060668cef6bba3b378b579745bcf0f1372a3bddb1ff2a0a2eb566c96ba1\n- vMLX-1.6.10-tahoe-arm64.dmg: 59d8b087af8c9820e224ba96fe1419350d7da3e7ffceeaca9c5c2c7cab7da9a7"
 }
