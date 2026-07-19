@@ -1,19 +1,19 @@
 {
-  "version": "1.6.10",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.10/vMLX-1.6.10-sequoia-arm64.dmg",
-  "sha256": "2f19a060668cef6bba3b378b579745bcf0f1372a3bddb1ff2a0a2eb566c96ba1",
-  "sha512": "44N5bJU2AyFWpxnHCTKJwo5IFGt2KajPcZkpFBt8kUwPClfwzajvkF53CGrdHD/R/9Dd+T6KJK52RtwD95AQIg==",
+  "version": "1.6.11",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.11/vMLX-1.6.11-sequoia-arm64.dmg",
+  "sha256": "c1a8dcd17563a772b83e64bfb443aabedb46111a1e0e500ab69c4fc49143cb2b",
+  "sha512": "44nbyek4aiJsfFOsvDJU44S1Lp6iSG4yHATmPkdHRsmj1vJ9AeygrAKFyPTxmcICXJelZbMcFjWWedPKwN5Bkw==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.10/vMLX-1.6.10-sequoia-arm64.dmg",
-      "sha256": "2f19a060668cef6bba3b378b579745bcf0f1372a3bddb1ff2a0a2eb566c96ba1",
-      "sha512": "44N5bJU2AyFWpxnHCTKJwo5IFGt2KajPcZkpFBt8kUwPClfwzajvkF53CGrdHD/R/9Dd+T6KJK52RtwD95AQIg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.11/vMLX-1.6.11-sequoia-arm64.dmg",
+      "sha256": "c1a8dcd17563a772b83e64bfb443aabedb46111a1e0e500ab69c4fc49143cb2b",
+      "sha512": "44nbyek4aiJsfFOsvDJU44S1Lp6iSG4yHATmPkdHRsmj1vJ9AeygrAKFyPTxmcICXJelZbMcFjWWedPKwN5Bkw=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.10/vMLX-1.6.10-tahoe-arm64.dmg",
-      "sha256": "59d8b087af8c9820e224ba96fe1419350d7da3e7ffceeaca9c5c2c7cab7da9a7",
-      "sha512": "AYCBQJOSOv2YNvAuWg8qYImCUlhSsftpOJXddOKkofU7OBz5L8ii3Tl5G0IeL9xtpiuPfleMSrIpUJqYzosx7Q=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.11/vMLX-1.6.11-tahoe-arm64.dmg",
+      "sha256": "26b0b30a80e3576d2a2f967d9882966fde9637ed85f5fee2f7ec95a265e74308",
+      "sha512": "iEOnukL53MXyaisCXzIQs+aHOg1mSGGckyH0tTLsMmT9HKTW7T8voYCmZH8mo6QzZNzpG1RUTeoDP0XIBa+dgQ=="
     }
   },
-  "notes": "vMLX 1.6.10\n\nUrgent Bonsai affine-1 runtime and paged L2 cache release.\n\nHighlights:\n- Adds schema-2 affine1 and ternary JANG loading for text and vision-language models, including lossless 1-bit code widening for native MLX quantized kernels and per-module quantization overrides.\n- Live packaged-app verification covered Bonsai-27b-1bit-JANG hybrid GDN/SSM plus attention, TurboQuant attention KV, async clean-prefill rederive, reasoning Auto/Off/On, and multi-turn requests through /v1/responses.\n- Paged block-disk L2 cache is enabled by default in the engine and UI; request cleanup now performs eviction and L2 writes correctly. Live cache telemetry showed prefix reuse, paged plus SSM cached tokens, disk hits, writes, and companion-state stores.\n- Chat Settings visibly reflected bundle-derived generation defaults: temperature 1.00, top-p 0.95, top-k 20, repetition penalty 1.00, and bundle-owned max tokens.\n- Built-in run_command was invoked and executed from the final packaged Electron UI. Bonsai post-tool continuation can still over-generate after an empty continuation; that follow-up is not claimed fixed in this release.\n\nVerification:\n- Source commit 693b2d08302aa31fc0dda6f50a441250fc1dcfb1.\n- 276 focused engine tests passed; 2206 panel tests passed with 3 skipped; TypeScript typecheck passed.\n- Both DMGs are Developer ID signed by ShieldStack LLC (55KGF2S5AY), Apple notarized, stapled, and Gatekeeper accepted. Notarization IDs: Sequoia 7b8eda7e-1713-4878-8a22-150d738e8763; Tahoe a7d4fe5c-27ed-4f9b-b79c-a7a39344e5ed.\n\nFlavors: sequoia (macosx_14 wheels; Sonoma 14.5+, Sequoia 15, Tahoe) and tahoe (native macosx_26 wheels; Tahoe only).\n\nDMG SHA256:\n- vMLX-1.6.10-sequoia-arm64.dmg: 2f19a060668cef6bba3b378b579745bcf0f1372a3bddb1ff2a0a2eb566c96ba1\n- vMLX-1.6.10-tahoe-arm64.dmg: 59d8b087af8c9820e224ba96fe1419350d7da3e7ffceeaca9c5c2c7cab7da9a7"
+  "notes": "vMLX 1.6.11\n\nStreaming, typed-cache, and packaged-runtime checkpoint.\n\nHighlights:\n- Streams post-reasoning and post-tool visible answers progressively across Responses, Chat Completions, and Electron instead of withholding a second-pass answer until completion.\n- Hardens multi-turn tool continuation, terminal events, cancellation/recovery, and reasoning/content separation.\n- Extends architecture-typed prefix, paged, and block-disk L2 reuse for hybrid and mixed-attention families while keeping native exceptions explicit. TurboQuant is a KV-cache storage codec and remains distinct from JANG affine weights, JANGTQ/MXTQ Hadamard-codebook weights, and base MLX MXFP weights.\n- Improves model-derived cache/parser/reasoning settings parity, gateway port/LAN truth, model switching, missing-path handling, and narrow-window UI behavior.\n- Adds current media/cache routing work for supported Qwen, Bonsai, Gemma, Step, and MiniMax-M3 families; MiniMax-M2.7 remains text-only.\n\nVerification:\n- Source commit 95b2caa956c592a9caa706f2a790dcd5664721b7; tag v1.6.11.\n- Full Python suite: 6100 passed, 96 skipped, 92 deselected. Full panel suite: 2311 passed, 3 skipped; typecheck and production build passed.\n- Both DMGs passed bundled-runtime verification, Developer ID signing, Apple notarization, stapling, Gatekeeper, DMG verification, and isolated installed-app smoke.\n- Sequoia installed-app proof used the real Electron Start button and bundled engine for Gemma 4 12B, then completed three UI turns including exactly one real file_info tool, multi-turn recall, paged+mixed-SWA cache reuse, and raw Responses/Chat SSE. Tahoe independently loaded the same session and completed UI and Responses streaming.\n\nKnown follow-up:\n- This is a tested release checkpoint, not closure of every retained model-family stress row. Larger/longer media, Omni audio, gateway soak, and remaining family-specific PARTIAL rows continue after this release.\n\nDMG SHA256:\n- Sequoia: c1a8dcd17563a772b83e64bfb443aabedb46111a1e0e500ab69c4fc49143cb2b\n- Tahoe: 26b0b30a80e3576d2a2f967d9882966fde9637ed85f5fee2f7ec95a265e74308"
 }
