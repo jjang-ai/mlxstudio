@@ -1,19 +1,19 @@
 {
-  "version": "1.6.11",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.11/vMLX-1.6.11-sequoia-arm64.dmg",
-  "sha256": "c1a8dcd17563a772b83e64bfb443aabedb46111a1e0e500ab69c4fc49143cb2b",
-  "sha512": "44nbyek4aiJsfFOsvDJU44S1Lp6iSG4yHATmPkdHRsmj1vJ9AeygrAKFyPTxmcICXJelZbMcFjWWedPKwN5Bkw==",
+  "version": "1.6.12",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.12/vMLX-1.6.12-sequoia-arm64.dmg",
+  "sha256": "704d87edf168a73d4ca2d94e8cb6190ca593ada71bca181bf369c84ea13ae421",
+  "sha512": "Yp3NwYg60/kUrR7ct5zoumfT3KceUWycr9j+TwKq28Y+1kdJesGU8HcnOWS25pgqKhH3OqDaO1K+kOxUx4ecLw==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.11/vMLX-1.6.11-sequoia-arm64.dmg",
-      "sha256": "c1a8dcd17563a772b83e64bfb443aabedb46111a1e0e500ab69c4fc49143cb2b",
-      "sha512": "44nbyek4aiJsfFOsvDJU44S1Lp6iSG4yHATmPkdHRsmj1vJ9AeygrAKFyPTxmcICXJelZbMcFjWWedPKwN5Bkw=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.12/vMLX-1.6.12-sequoia-arm64.dmg",
+      "sha256": "704d87edf168a73d4ca2d94e8cb6190ca593ada71bca181bf369c84ea13ae421",
+      "sha512": "Yp3NwYg60/kUrR7ct5zoumfT3KceUWycr9j+TwKq28Y+1kdJesGU8HcnOWS25pgqKhH3OqDaO1K+kOxUx4ecLw=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.11/vMLX-1.6.11-tahoe-arm64.dmg",
-      "sha256": "26b0b30a80e3576d2a2f967d9882966fde9637ed85f5fee2f7ec95a265e74308",
-      "sha512": "iEOnukL53MXyaisCXzIQs+aHOg1mSGGckyH0tTLsMmT9HKTW7T8voYCmZH8mo6QzZNzpG1RUTeoDP0XIBa+dgQ=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.12/vMLX-1.6.12-tahoe-arm64.dmg",
+      "sha256": "81b9205a722282cc1eec75713c18dec3efc34ed76e3bcaf6587147e0ce372c49",
+      "sha512": "3TkVseOHwu20AUv9Fx52eehW9wXqlV3+anHe3ONrdAWq3sibMguM6f6mP8cBH8r26xrw7CNuMNI2dgLjGejZ0Q=="
     }
   },
-  "notes": "vMLX 1.6.11\n\nStreaming, typed-cache, and packaged-runtime checkpoint.\n\nHighlights:\n- Streams post-reasoning and post-tool visible answers progressively across Responses, Chat Completions, and Electron instead of withholding a second-pass answer until completion.\n- Hardens multi-turn tool continuation, terminal events, cancellation/recovery, and reasoning/content separation.\n- Extends architecture-typed prefix, paged, and block-disk L2 reuse for hybrid and mixed-attention families while keeping native exceptions explicit. TurboQuant is a KV-cache storage codec and remains distinct from JANG affine weights, JANGTQ/MXTQ Hadamard-codebook weights, and base MLX MXFP weights.\n- Improves model-derived cache/parser/reasoning settings parity, gateway port/LAN truth, model switching, missing-path handling, and narrow-window UI behavior.\n- Adds current media/cache routing work for supported Qwen, Bonsai, Gemma, Step, and MiniMax-M3 families; MiniMax-M2.7 remains text-only.\n\nVerification:\n- Source commit 95b2caa956c592a9caa706f2a790dcd5664721b7; tag v1.6.11.\n- Full Python suite: 6100 passed, 96 skipped, 92 deselected. Full panel suite: 2311 passed, 3 skipped; typecheck and production build passed.\n- Both DMGs passed bundled-runtime verification, Developer ID signing, Apple notarization, stapling, Gatekeeper, DMG verification, and isolated installed-app smoke.\n- Sequoia installed-app proof used the real Electron Start button and bundled engine for Gemma 4 12B, then completed three UI turns including exactly one real file_info tool, multi-turn recall, paged+mixed-SWA cache reuse, and raw Responses/Chat SSE. Tahoe independently loaded the same session and completed UI and Responses streaming.\n\nKnown follow-up:\n- This is a tested release checkpoint, not closure of every retained model-family stress row. Larger/longer media, Omni audio, gateway soak, and remaining family-specific PARTIAL rows continue after this release.\n\nDMG SHA256:\n- Sequoia: c1a8dcd17563a772b83e64bfb443aabedb46111a1e0e500ab69c4fc49143cb2b\n- Tahoe: 26b0b30a80e3576d2a2f967d9882966fde9637ed85f5fee2f7ec95a265e74308"
+  "notes": "vMLX 1.6.12\n\nCache-hierarchy, streaming-recovery, and gateway-lifecycle checkpoint.\n\nHighlights:\n- Preserves progressive reasoning, content, tool, terminal, and usage emission through Electron and the OpenAI-compatible streaming APIs.\n- Hardens gateway disconnect ownership and immediate recovery across Chat, Responses, Anthropic, and Ollama routes.\n- Extends architecture-aware prefix, paged, and block-disk L2 reuse, including q4 TurboQuant for eligible KV components while keeping JANG affine, JANGTQ/MXTQ, and base MLX MXFP formats distinct.\n- Keeps typed/native cache exceptions explicit for DSV4, openPangu, MiniMax-M3, Gemma mixed-SWA, and related architectures.\n- Improves model-derived UI settings, single-model swaps, eager Start materialization, port/LAN rollback, and missing-model recovery.\n\nVerification:\n- Runtime source checkpoint 6de1096eca0ea2d5516ad64d6e79da98f3ae20a2; tag v1.6.12.\n- Full Python suite: 6186 passed, 185 skipped. Full panel suite: 2332 passed, 3 skipped; TypeScript typecheck passed.\n- Both DMGs passed bundled-runtime verification, Developer ID signing, fresh Apple notarization, stapling, Gatekeeper verification, and exact installed-app smoke.\n- Sequoia completed a three-turn Electron reasoning/tool/recall loop, raw Responses and Chat streaming, and paged+mixed-SWA+tq-native cache reuse. Tahoe independently completed Electron reasoning/content and raw Responses streaming.\n\nKnown follow-up:\n- This is a public usable checkpoint, not closure of every retained family/stress row. Broader signed-app model repetition, long stochastic/media soaks, remaining parser-family tool rows, and documented family-specific PARTIAL rows remain deferred.\n\nDMG SHA256:\n- Sequoia: 704d87edf168a73d4ca2d94e8cb6190ca593ada71bca181bf369c84ea13ae421\n- Tahoe: 81b9205a722282cc1eec75713c18dec3efc34ed76e3bcaf6587147e0ce372c49"
 }
