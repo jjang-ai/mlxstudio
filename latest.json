@@ -1,19 +1,19 @@
 {
-  "version": "1.6.14",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.14/vMLX-1.6.14-sequoia-arm64.dmg",
-  "sha256": "345fd1ec02bf039b4a113bc617c5fa4eca7c057577a100212e3587dd1bc8022c",
-  "sha512": "qgQ/Ailo/o8C/zWkMwIkGwYaUjpoWotSf7e06bRLIZ0CCWWZvbF7FqJL7DHYclh16i2F5MpB+bYalADU8yCUtg==",
+  "version": "1.6.15",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.15/vMLX-1.6.15-sequoia-arm64.dmg",
+  "sha256": "c1bfa6e6b62e2e322461fd549203599f912dc4688e2c31e86d83d7b68c69a4cf",
+  "sha512": "qZAaRKE5rmYIgR473AmlabEqHqO+eEtidqBStb98d8qfR8l8z5YvceFG39OB/8RtUdtxfvvEt667XyDBeR7ZHg==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.14/vMLX-1.6.14-sequoia-arm64.dmg",
-      "sha256": "345fd1ec02bf039b4a113bc617c5fa4eca7c057577a100212e3587dd1bc8022c",
-      "sha512": "qgQ/Ailo/o8C/zWkMwIkGwYaUjpoWotSf7e06bRLIZ0CCWWZvbF7FqJL7DHYclh16i2F5MpB+bYalADU8yCUtg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.15/vMLX-1.6.15-sequoia-arm64.dmg",
+      "sha256": "c1bfa6e6b62e2e322461fd549203599f912dc4688e2c31e86d83d7b68c69a4cf",
+      "sha512": "qZAaRKE5rmYIgR473AmlabEqHqO+eEtidqBStb98d8qfR8l8z5YvceFG39OB/8RtUdtxfvvEt667XyDBeR7ZHg=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.14/vMLX-1.6.14-tahoe-arm64.dmg",
-      "sha256": "d77b49ede22d47f7cc2ebb3f3ecfe1b4425f92c05c20eff7be9d2ab6c97a739d",
-      "sha512": "ri1ZgjK3vIZ5z7D+lc+Ax2RIAWU2+Os8O6Qu2HU8i1Dv+HMAsRsEWC9w/BQgW0agmeiVMyj0E3+g87kWjiGptA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.15/vMLX-1.6.15-tahoe-arm64.dmg",
+      "sha256": "ae5a41c60fd79a39238e03fd74c1df2f5d92a2e57df8a60ff58ee34e248eb4be",
+      "sha512": "h3iVg2ZcCzY3gOUT7YdEJ4/7MQR3hJ5iyY04FMZJQPTQ8LnefrwPNN7YZKbQILoGMU1RvxDUa7zQK7wVeGhC+A=="
     }
   },
-  "notes": "vMLX 1.6.14\n\nMultimodal conversation-state and signed-runtime checkpoint.\n\nHighlights:\n- Isolates and replays Nemotron Omni multimodal conversation state across text, image, audio, tool, and follow-up turns without stale attachment leakage.\n- Preserves progressive reasoning and content streaming across Electron, Responses, and Chat Completions, including terminal completion and structured tool continuation.\n- Keeps architecture-derived prefix, paged, block-disk L2, and q4 TurboQuant stored-KV policy visible and effective for compatible caches while retaining native model exceptions.\n- Maintains the distinction between affine JANG weights, JANGTQ/MXTQ Hadamard-codebook weights, base MLX MXFP weights, and TurboQuant KV storage.\n\nVerification:\n- Runtime source checkpoint e1776a485e8a85f3957b79030e12f4c312eda04b; tag v1.6.14.\n- Full Python suite: 6203 passed, 96 skipped, 92 deselected. Full panel suite: 2346 passed, 3 skipped; TypeScript typecheck and production compile passed.\n- Both Sequoia and Tahoe DMGs passed bundled-runtime verification, Developer ID signing, Apple notarization, stapling, Gatekeeper, exact install, and live Electron Start/Stop smoke on erics-m5-max.local.\n- Sequoia completed coherent multi-turn reasoning/content, one real file_info tool loop, raw Responses streaming, and warm paged mixed-SWA q4-TQ reuse. Tahoe independently reloaded through the literal Start button, restored the identical prompt from block-disk L2 as paged+mixed_swa+disk+tq-native, and emitted 185 reasoning plus 18 content Chat-Completions deltas through a terminal stop and DONE.\n\nKnown follow-up:\n- This is a public usable checkpoint, not closure of every retained family/stress row. Broader signed-app model repetition, longer stochastic/media and gateway soaks, remaining parser-family tool rows, and documented family-specific PARTIAL rows remain deferred.\n\nDMG SHA256:\n- Sequoia: 345fd1ec02bf039b4a113bc617c5fa4eca7c057577a100212e3587dd1bc8022c\n- Tahoe: d77b49ede22d47f7cc2ebb3f3ecfe1b4425f92c05c20eff7be9d2ab6c97a739d"
+  "notes": "vMLX 1.6.15\n\nReasoning, tool-streaming, cache, and gateway reliability checkpoint.\n\nHighlights:\n- Separates reasoning, visible content, and tool-call streaming across Electron, Chat Completions, Responses, Anthropic, and Ollama.\n- Hardens post-tool continuation and removes speculative or phantom tool-start emissions.\n- Improves Laguna S2.1 reasoning/template behavior and q4 TurboQuant mixed-SWA cache restore, including disk-only partial-prefix reuse.\n- Preserves model-derived sampling and parser defaults across saved sessions.\n- Improves single-model gateway swaps, disconnect handling, and process cleanup.\n- Adds targeted cache/runtime fixes for LFM, MiniMax M3, Nemotron Omni, Gemma 4 media, Qwen MTP video, and DSV4 long prefill.\n\nVerification:\n- Exact source/tag: 344b6c88e46ce3eaf4aeb32108a48ed7144c7d2f / v1.6.15.\n- Full Python suite: 6290 passed, 96 skipped, 92 deselected. Full panel suite: 2405 passed, 3 skipped; TypeScript typecheck and production build passed.\n- Sequoia and Tahoe DMGs passed Developer ID signing, Apple notarization, stapling, Gatekeeper, isolated installation, and signed-app Electron Start/Stop smoke.\n- Sequoia completed a three-turn UI reasoning/tool/history loop, raw Chat and Responses streaming, warm paged mixed-SWA q4-TQ reuse, and post-restart block-disk L2 restore. Tahoe independently completed signed-app UI and raw Chat streaming proof.\n\nKnown follow-up:\n- This is a public usable checkpoint, not closure of every retained family/stress row. Broader family/media/gateway repetition and documented PARTIAL rows remain follow-up work.\n\nDMG SHA256:\n- Sequoia: c1bfa6e6b62e2e322461fd549203599f912dc4688e2c31e86d83d7b68c69a4cf\n- Tahoe: ae5a41c60fd79a39238e03fd74c1df2f5d92a2e57df8a60ff58ee34e248eb4be"
 }
