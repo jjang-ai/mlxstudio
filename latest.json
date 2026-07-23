@@ -1,19 +1,19 @@
 {
-  "version": "1.6.15",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.15/vMLX-1.6.15-sequoia-arm64.dmg",
-  "sha256": "c1bfa6e6b62e2e322461fd549203599f912dc4688e2c31e86d83d7b68c69a4cf",
-  "sha512": "qZAaRKE5rmYIgR473AmlabEqHqO+eEtidqBStb98d8qfR8l8z5YvceFG39OB/8RtUdtxfvvEt667XyDBeR7ZHg==",
+  "version": "1.6.16",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.16/vMLX-1.6.16-sequoia-arm64.dmg",
+  "sha256": "986ce9a44f7cff90d34a5d79cbb72a6eb7dc63b87c1dc0ef37c0605a33564b8a",
+  "sha512": "JdlAb7DVYyLMpPdDT0B202svKtIT4gttu5z24ea4la2Nwsu9a8XQuMJ1aifp7c/iqFK2L+o8YQwfDiXyUCmIGQ==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.15/vMLX-1.6.15-sequoia-arm64.dmg",
-      "sha256": "c1bfa6e6b62e2e322461fd549203599f912dc4688e2c31e86d83d7b68c69a4cf",
-      "sha512": "qZAaRKE5rmYIgR473AmlabEqHqO+eEtidqBStb98d8qfR8l8z5YvceFG39OB/8RtUdtxfvvEt667XyDBeR7ZHg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.16/vMLX-1.6.16-sequoia-arm64.dmg",
+      "sha256": "986ce9a44f7cff90d34a5d79cbb72a6eb7dc63b87c1dc0ef37c0605a33564b8a",
+      "sha512": "JdlAb7DVYyLMpPdDT0B202svKtIT4gttu5z24ea4la2Nwsu9a8XQuMJ1aifp7c/iqFK2L+o8YQwfDiXyUCmIGQ=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.15/vMLX-1.6.15-tahoe-arm64.dmg",
-      "sha256": "ae5a41c60fd79a39238e03fd74c1df2f5d92a2e57df8a60ff58ee34e248eb4be",
-      "sha512": "h3iVg2ZcCzY3gOUT7YdEJ4/7MQR3hJ5iyY04FMZJQPTQ8LnefrwPNN7YZKbQILoGMU1RvxDUa7zQK7wVeGhC+A=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.16/vMLX-1.6.16-tahoe-arm64.dmg",
+      "sha256": "6a31f573e37cf8089abe26b70dfcd9403167348a30ab07d7bfe4843b714b1621",
+      "sha512": "goTAcQeF4e6uVQlQHOXckFXXYKCSWlBjvEF4C/Z7PYRh6BiFKQjxmjEj5zHYZ2TQl7Sgx8wIobzAx+rYkWcxrw=="
     }
   },
-  "notes": "vMLX 1.6.15\n\nReasoning, tool-streaming, cache, and gateway reliability checkpoint.\n\nHighlights:\n- Separates reasoning, visible content, and tool-call streaming across Electron, Chat Completions, Responses, Anthropic, and Ollama.\n- Hardens post-tool continuation and removes speculative or phantom tool-start emissions.\n- Improves Laguna S2.1 reasoning/template behavior and q4 TurboQuant mixed-SWA cache restore, including disk-only partial-prefix reuse.\n- Preserves model-derived sampling and parser defaults across saved sessions.\n- Improves single-model gateway swaps, disconnect handling, and process cleanup.\n- Adds targeted cache/runtime fixes for LFM, MiniMax M3, Nemotron Omni, Gemma 4 media, Qwen MTP video, and DSV4 long prefill.\n\nVerification:\n- Exact source/tag: 344b6c88e46ce3eaf4aeb32108a48ed7144c7d2f / v1.6.15.\n- Full Python suite: 6290 passed, 96 skipped, 92 deselected. Full panel suite: 2405 passed, 3 skipped; TypeScript typecheck and production build passed.\n- Sequoia and Tahoe DMGs passed Developer ID signing, Apple notarization, stapling, Gatekeeper, isolated installation, and signed-app Electron Start/Stop smoke.\n- Sequoia completed a three-turn UI reasoning/tool/history loop, raw Chat and Responses streaming, warm paged mixed-SWA q4-TQ reuse, and post-restart block-disk L2 restore. Tahoe independently completed signed-app UI and raw Chat streaming proof.\n\nKnown follow-up:\n- This is a public usable checkpoint, not closure of every retained family/stress row. Broader family/media/gateway repetition and documented PARTIAL rows remain follow-up work.\n\nDMG SHA256:\n- Sequoia: c1bfa6e6b62e2e322461fd549203599f912dc4688e2c31e86d83d7b68c69a4cf\n- Tahoe: ae5a41c60fd79a39238e03fd74c1df2f5d92a2e57df8a60ff58ee34e248eb4be"
+  "notes": "vMLX 1.6.16\n\nEmergency parser, cache, and bundled-runtime checkpoint.\n\nHighlights:\n- Ships the KaTeX-backed Electron renderer fix for inline and display LaTeX so model math no longer appears as raw dollar delimiters or backslash syntax in chat/reasoning surfaces.\n- Preserves separate reasoning_content, visible output, and tool-call streaming in the scoped Laguna/Qwen/Bonsai paths proved for this gate.\n- Hardens packaged engine provenance so signed app sessions use bundled Python/vmlx_engine instead of stale development or system virtualenvs.\n- Retains scoped block-disk/L2/TurboQuant cache fixes and proofs, including Paged-Off SSD/TQ reuse paths covered by the current reruns.\n- Bundles vmlx_engine 1.6.16 and local jang_tools 2.5.34 from current source, with source-hash parity verification.\n\nVerification:\n- Exact source: f3426fb412588856a47f53b8549700267605c00f / v1.6.16.\n- Scoped r16_parser_cache preflight passed on the release head.\n- Focused Python/panel tests, TypeScript typecheck, math/reasoning renderer tests, engine-path policy, cache-control policy, and current Electron/API reruns passed for the scoped gate.\n- Sequoia and Tahoe DMGs were built from local source, Developer ID signed, Apple notarized, stapled, Gatekeeper accepted, and final verify-release-dmgs.sh passed.\n- Bundled Python verifier passed for vmlx_engine 1.6.16, critical vmlx_engine source parity, critical jang_tools source parity, no editable installs, relocatable console scripts, and critical MLX/VLM/audio/JANG imports.\n\nKnown follow-up:\n- This is a public emergency checkpoint, not full closure of every retained family/media/gateway stress row. Broader family repetition, media/audio/video matrix, exhaustive gateway soak, complete retained full-matrix closure, PyPI JANG publish, and remaining documented PARTIAL rows remain follow-up work.\n\nDMG SHA256:\n- Sequoia: 986ce9a44f7cff90d34a5d79cbb72a6eb7dc63b87c1dc0ef37c0605a33564b8a\n- Tahoe: 6a31f573e37cf8089abe26b70dfcd9403167348a30ab07d7bfe4843b714b1621"
 }
