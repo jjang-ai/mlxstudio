@@ -1,21 +1,21 @@
 {
-  "version": "1.6.66",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.66/vMLX-1.6.66-tahoe-arm64.dmg",
-  "sha256": "4773b6a26b75ea61083f08d26029047f109d0fd4a8c94559d9cb2ddfc1048862",
-  "sha512": "1Ozo+YS2PYdZBrRMzxpM9Mosno3KpQ4FXseg30jylP+K9LzLBC40IpU/VzsQEk6NVEi34k8OtKDxdg2rqwiQFQ==",
+  "version": "1.6.67",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.67/vMLX-1.6.67-tahoe-arm64.dmg",
+  "sha256": "e3cd647880e59268c264d7589157be064f46194ac154b5d3977410f562fd67e6",
+  "sha512": "E2toOlvKI5qjBRaOOw9xsi+LkOYaGmfjWErrxbcKgXzJpDrIcV4AQKMCKE7Rmc5aiG7q+b9HtS++6OckaUWjSA==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.66/vMLX-1.6.66-sequoia-arm64.dmg",
-      "bytes": 573993549,
-      "sha256": "06adc2b6a795a72fc7b25f2736b787df44ce6b7f7451802a7c14286869d103a7",
-      "sha512": "sVhOsIG1g8ZYNrTknLNrHCahFEai6ne5M9NFnU05oE/E/Ch0SC77nWDJWRZeEtjUAfq0ZwjsbxcroY0vGtZzAQ=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.67/vMLX-1.6.67-sequoia-arm64.dmg",
+      "bytes": 574148892,
+      "sha256": "f4a29700203c79fbcb2a357c9200aec2abad169be58a125c7acb15d4fad5ad63",
+      "sha512": "Tmca1IkUrVAIU/xGIlhuJP6NZJQi/OIPgvhzDW9d73OgUEZdDJx6Xi3LAOt3+ZZyHeudPSLAH5rwt12Fn+At9g=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.66/vMLX-1.6.66-tahoe-arm64.dmg",
-      "bytes": 595768535,
-      "sha256": "4773b6a26b75ea61083f08d26029047f109d0fd4a8c94559d9cb2ddfc1048862",
-      "sha512": "1Ozo+YS2PYdZBrRMzxpM9Mosno3KpQ4FXseg30jylP+K9LzLBC40IpU/VzsQEk6NVEi34k8OtKDxdg2rqwiQFQ=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.67/vMLX-1.6.67-tahoe-arm64.dmg",
+      "bytes": 595949589,
+      "sha256": "e3cd647880e59268c264d7589157be064f46194ac154b5d3977410f562fd67e6",
+      "sha512": "E2toOlvKI5qjBRaOOw9xsi+LkOYaGmfjWErrxbcKgXzJpDrIcV4AQKMCKE7Rmc5aiG7q+b9HtS++6OckaUWjSA=="
     }
   },
-  "notes": "# vMLX 1.6.66\n\n## Changes\n\n- Publish vMLX 1.6.65 updater manifest (`3e35e03d`)\n- Publish vMLX 1.6.65 updater manifest (`d8b91bbc`)\n- Keep qualification receipts outside public source (#294) (`4ce520b9`)\n- Preserve native BF16 width in prompt disk cache (`8e076b57`)\n- Wait for prompt SSD writes before terminal cleanup completes (`b744002d`)\n- Keep exact prompt SSD caches free of retained RAM payloads (`8e66fd66`)\n- Keep reasoning and cache hints within model capabilities (`ce2075ae`)\n- Use access recency for whole-prompt SSD eviction (`c7048672`)\n- Prepare v1.6.66 cache reliability release (`74af9546`)\n\n## Runtime provenance\n\n- vMLX source: `ed5d65d1d66ea4024b45cfe6eaa7830422952d84`\n- JANG runtime: `bb97d559c38227cf6da2dcbc3c64f61e7ffaf436` (`jang 2.5.48`)\n- Tahoe/macOS 26 is the default build; Sequoia is the compatibility build.\n- Both DMGs are Developer ID signed, independently notarized, stapled, and Gatekeeper checked by the candidate workflow.\n\n## Downloads\n\n- **Tahoe**: `vMLX-1.6.66-tahoe-arm64.dmg`\n  - SHA-256: `4773b6a26b75ea61083f08d26029047f109d0fd4a8c94559d9cb2ddfc1048862`\n  - Size: `595768535` bytes\n- **Sequoia**: `vMLX-1.6.66-sequoia-arm64.dmg`\n  - SHA-256: `06adc2b6a795a72fc7b25f2736b787df44ce6b7f7451802a7c14286869d103a7`\n  - Size: `573993549` bytes\n\n## Python distributions\n\n- Wheel: `vmlx-1.6.66-py3-none-any.whl` \u2014 SHA-256 `f5463000711b63c291883e9632ff72bc70aeaaa67783efac876b24a3d1d56e20`\n- Source: `vmlx-1.6.66.tar.gz` \u2014 SHA-256 `0e771335f537b210c0b4dfa55ff8e981d2d70bf093f70a0770523a5f30f8d9ba`"
+  "notes": "# vMLX 1.6.67\n\n## Changes\n\n- Publish vMLX 1.6.66 updater manifest (`694da6ca`)\n- Fix website release versions followed by sentence punctuation (`7bd87674`)\n- Preserve complete native OpenPangu tool schemas across continuations (`a8db56ad`)\n- Reject incomplete OpenPangu schemas despite native examples (`cd396259`)\n- Prepare vMLX 1.6.67 (`23ea3478`)\n\n## Runtime provenance\n\n- vMLX source: `c4a95fe4ee156d18456051b75cb482518e513f1f`\n- JANG runtime: `bb97d559c38227cf6da2dcbc3c64f61e7ffaf436` (`jang 2.5.48`)\n- Tahoe/macOS 26 is the default build; Sequoia is the compatibility build.\n- Both DMGs are Developer ID signed, independently notarized, stapled, and Gatekeeper checked by the candidate workflow.\n\n## Downloads\n\n- **Tahoe**: `vMLX-1.6.67-tahoe-arm64.dmg`\n  - SHA-256: `e3cd647880e59268c264d7589157be064f46194ac154b5d3977410f562fd67e6`\n  - Size: `595949589` bytes\n- **Sequoia**: `vMLX-1.6.67-sequoia-arm64.dmg`\n  - SHA-256: `f4a29700203c79fbcb2a357c9200aec2abad169be58a125c7acb15d4fad5ad63`\n  - Size: `574148892` bytes\n\n## Python distributions\n\n- Wheel: `vmlx-1.6.67-py3-none-any.whl` \u2014 SHA-256 `28d25968fb6612c08cb014acbf2f40a0cb0c0b2217c898fc87c21c123bd7a60e`\n- Source: `vmlx-1.6.67.tar.gz` \u2014 SHA-256 `b58bc53c854cb821d3dd813af6bca7610480aca8071cabc578893fc040cd440d`"
 }
