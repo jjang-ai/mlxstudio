@@ -1,21 +1,21 @@
 {
-  "version": "1.6.78",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.78/vMLX-1.6.78-tahoe-arm64.dmg",
-  "sha256": "1361a1bd7765e8206aec6d5759d91a7f681773aab6283a4d2887553320da7cd0",
-  "sha512": "B/l1g1h3QbN9jra2vkdJ57uoV2ZqSGgNnlvCpwbb0raWEhHhtWuLEq2S61rcIth2e7ByM02Eyy2FsKj20gboWg==",
+  "version": "1.6.79",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.79/vMLX-1.6.79-tahoe-arm64.dmg",
+  "sha256": "63fc09d658dfe7f048a5eaaccb67f703964388784a802fa2ce2b68406470cfb6",
+  "sha512": "SrfUFp1UWU6FNLVysaXmhs+LtweOwiNd3rq+H8pOnTv4WGDaBMc6RAt3hZScZFFYtGoLsBfzYZY+fxLXJ8XesA==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.78/vMLX-1.6.78-sequoia-arm64.dmg",
-      "bytes": 578235188,
-      "sha256": "3b6092de5fe363dca43e24f175f376be363e5621bf80e9b8e9038ab878456a4a",
-      "sha512": "kyeeTW+Sbev0ykFBMhmOQ54Nk+FhyP9PKfDzBa1LJwQLz69oFDxblzVUCus/I0I8fCsYqplp8juQp3CBRhvm4w=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.79/vMLX-1.6.79-sequoia-arm64.dmg",
+      "bytes": 577346961,
+      "sha256": "f4323580efa4ccc403c12f6a2384a992592c7369c88f2aeed4d966ffb09b17f6",
+      "sha512": "CBE7H46md7J4kOV5eJB08p74kRNiFM36Cl5G3tiFLRqzsa9I+szccdaLZybiaUBR2KlG9m608j4DaM8ZLy4eMQ=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.78/vMLX-1.6.78-tahoe-arm64.dmg",
-      "bytes": 603732333,
-      "sha256": "1361a1bd7765e8206aec6d5759d91a7f681773aab6283a4d2887553320da7cd0",
-      "sha512": "B/l1g1h3QbN9jra2vkdJ57uoV2ZqSGgNnlvCpwbb0raWEhHhtWuLEq2S61rcIth2e7ByM02Eyy2FsKj20gboWg=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.79/vMLX-1.6.79-tahoe-arm64.dmg",
+      "bytes": 603103985,
+      "sha256": "63fc09d658dfe7f048a5eaaccb67f703964388784a802fa2ce2b68406470cfb6",
+      "sha512": "SrfUFp1UWU6FNLVysaXmhs+LtweOwiNd3rq+H8pOnTv4WGDaBMc6RAt3hZScZFFYtGoLsBfzYZY+fxLXJ8XesA=="
     }
   },
-  "notes": "# vMLX 1.6.78\n\n- Add MiniCPM-V-4.7 text, image and video support, with bundled DSpark detection and exact verification by default. Bundles without a drafter use ordinary decoding; explicit opt-out remains available.\n- Add Naive N0.5 and GLM-5.3 Flash JANGHT execution improvements, GLM DFlash2 integration, and further Qwen speculative-decoding and prefill improvements. Performance depends on the bundle, sampling and workload.\n- Publish completed responses before background SSD persistence finishes, and synchronize dependent continuations with their cache writes. Reduce redundant snapshot copies, store changed prefix rows, and group compatible block files for faster restoration.\n- Preserve native recurrent and attention state across SSD restoration, media turns and restart; reduce retained snapshot memory and shared-pool reconciliation overhead.\n- Surface marker-free native answers that end naturally inside template-open thinking, without changing generated tokens or sampling. Truncated thinking, explicit reasoning delimiters, tool calls and user stop sequences retain their existing semantics.\n- Fix image attachment capability detection, DSpark health and cache administration, and native speculative-session settings that previously showed inapplicable batching controls.\n- Improve cache, prefill and tool-turn statistics, and preserve native generation controls across the Chat Completions and Responses APIs.\n\nChoose the Sequoia build for macOS 14.5 or later, or the Tahoe build for macOS 26 or later. Both contain the same application and engine changes with platform-appropriate MLX wheels."
+  "notes": "# vMLX 1.6.79\n\n## Changes\n\n- Preserve model-native and explicit output limits when projected memory estimates are conservative; retain adaptive prefill chunking and memory advisories.\n- Fix native-EOS reasoning/tool classification, remove duplicate reasoning rails, and refresh attachment capabilities after engine restarts.\n- Correct DFlash2 cache rollback at EOS, chain SSD snapshots across pending final tokens, and isolate MiniCPM media-cache keys by crop so appending media preserves earlier prefixes.\n- Preserve explicit API seeds on the model worker, protect active requests during sleep and cache administration, and restore gateway services after cancelled or overlapping shutdown.\n- Report the active GLM DFlash2 native SSD cache accurately, label MTP acceptance by its measured phase, and expose DSpark terminal costs without changing decoding policy.\n- Load text-only MiniCPM sessions through their supported runtime, validate bundled drafter detection, and stop DSpark prefill cooperatively at existing chunk boundaries.\n\n## Runtime provenance\n\n- vMLX source: `e6184fefea175e197dcfb4a571b0762c4dc6d71c`\n- JANG runtime: `3041941aee51384652548b8416f3f96d8e452f56` (`jang 2.5.49`)\n- Tahoe/macOS 26 is the default build; Sequoia is the compatibility build.\n- Both DMGs are Developer ID signed, independently notarized, stapled, and Gatekeeper checked by the release verification pipeline.\n\n## Downloads\n\n- **Tahoe**: `vMLX-1.6.79-tahoe-arm64.dmg`\n  - SHA-256: `63fc09d658dfe7f048a5eaaccb67f703964388784a802fa2ce2b68406470cfb6`\n  - Size: `603103985` bytes\n- **Sequoia**: `vMLX-1.6.79-sequoia-arm64.dmg`\n  - SHA-256: `f4323580efa4ccc403c12f6a2384a992592c7369c88f2aeed4d966ffb09b17f6`\n  - Size: `577346961` bytes\n\n## Python distributions\n\n- Wheel: `vmlx-1.6.79-py3-none-any.whl` \u2014 SHA-256 `65dcc009110db1770417bb3005c1b61435e2c7fb9fd3030b78a1b0936e888bc8`\n- Source: `vmlx-1.6.79.tar.gz` \u2014 SHA-256 `b66e4620700b8b9c3c75cd1507aef4401a0fc6cb622df369d9123922c0bc9863`"
 }
