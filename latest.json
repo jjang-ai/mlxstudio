@@ -1,21 +1,21 @@
 {
-  "version": "1.6.79",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.79/vMLX-1.6.79-tahoe-arm64.dmg",
-  "sha256": "63fc09d658dfe7f048a5eaaccb67f703964388784a802fa2ce2b68406470cfb6",
-  "sha512": "SrfUFp1UWU6FNLVysaXmhs+LtweOwiNd3rq+H8pOnTv4WGDaBMc6RAt3hZScZFFYtGoLsBfzYZY+fxLXJ8XesA==",
+  "version": "1.6.80",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.80/vMLX-1.6.80-tahoe-arm64.dmg",
+  "sha256": "586dec74d543e5fe270cee3a07aa6ee575a7c9b0e03ce968f44ae2a50d50f878",
+  "sha512": "VrHPJ4oNkWFDLmyqyRmUWw2kf/tywUY/8U0N67mvrb8U7rc1/FFjYD2zKzZQRNSajITJFeqreb997m4BojJ6VA==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.79/vMLX-1.6.79-sequoia-arm64.dmg",
-      "bytes": 577346961,
-      "sha256": "f4323580efa4ccc403c12f6a2384a992592c7369c88f2aeed4d966ffb09b17f6",
-      "sha512": "CBE7H46md7J4kOV5eJB08p74kRNiFM36Cl5G3tiFLRqzsa9I+szccdaLZybiaUBR2KlG9m608j4DaM8ZLy4eMQ=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.80/vMLX-1.6.80-sequoia-arm64.dmg",
+      "bytes": 577850852,
+      "sha256": "1f97895dc875b18655e33865233fe21a418eaad91bd5defdddaa4f8fcd0c56ea",
+      "sha512": "LQtlQT88Y/lfBLQ2TU4ha4Mm1GovqeduAcOJmq5wCsp/iVMstuzkXm0eU1YPZrPSN86p9CFS5LeYKa7LwiPAcA=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.79/vMLX-1.6.79-tahoe-arm64.dmg",
-      "bytes": 603103985,
-      "sha256": "63fc09d658dfe7f048a5eaaccb67f703964388784a802fa2ce2b68406470cfb6",
-      "sha512": "SrfUFp1UWU6FNLVysaXmhs+LtweOwiNd3rq+H8pOnTv4WGDaBMc6RAt3hZScZFFYtGoLsBfzYZY+fxLXJ8XesA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.80/vMLX-1.6.80-tahoe-arm64.dmg",
+      "bytes": 603303189,
+      "sha256": "586dec74d543e5fe270cee3a07aa6ee575a7c9b0e03ce968f44ae2a50d50f878",
+      "sha512": "VrHPJ4oNkWFDLmyqyRmUWw2kf/tywUY/8U0N67mvrb8U7rc1/FFjYD2zKzZQRNSajITJFeqreb997m4BojJ6VA=="
     }
   },
-  "notes": "# vMLX 1.6.79\n\n## Changes\n\n- Preserve model-native and explicit output limits when projected memory estimates are conservative; retain adaptive prefill chunking and memory advisories.\n- Fix native-EOS reasoning/tool classification, remove duplicate reasoning rails, and refresh attachment capabilities after engine restarts.\n- Correct DFlash2 cache rollback at EOS, chain SSD snapshots across pending final tokens, and isolate MiniCPM media-cache keys by crop so appending media preserves earlier prefixes.\n- Preserve explicit API seeds on the model worker, protect active requests during sleep and cache administration, and restore gateway services after cancelled or overlapping shutdown.\n- Report the active GLM DFlash2 native SSD cache accurately, label MTP acceptance by its measured phase, and expose DSpark terminal costs without changing decoding policy.\n- Load text-only MiniCPM sessions through their supported runtime, validate bundled drafter detection, and stop DSpark prefill cooperatively at existing chunk boundaries.\n\n## Runtime provenance\n\n- vMLX source: `e6184fefea175e197dcfb4a571b0762c4dc6d71c`\n- JANG runtime: `3041941aee51384652548b8416f3f96d8e452f56` (`jang 2.5.49`)\n- Tahoe/macOS 26 is the default build; Sequoia is the compatibility build.\n- Both DMGs are Developer ID signed, independently notarized, stapled, and Gatekeeper checked by the release verification pipeline.\n\n## Downloads\n\n- **Tahoe**: `vMLX-1.6.79-tahoe-arm64.dmg`\n  - SHA-256: `63fc09d658dfe7f048a5eaaccb67f703964388784a802fa2ce2b68406470cfb6`\n  - Size: `603103985` bytes\n- **Sequoia**: `vMLX-1.6.79-sequoia-arm64.dmg`\n  - SHA-256: `f4323580efa4ccc403c12f6a2384a992592c7369c88f2aeed4d966ffb09b17f6`\n  - Size: `577346961` bytes\n\n## Python distributions\n\n- Wheel: `vmlx-1.6.79-py3-none-any.whl` \u2014 SHA-256 `65dcc009110db1770417bb3005c1b61435e2c7fb9fd3030b78a1b0936e888bc8`\n- Source: `vmlx-1.6.79.tar.gz` \u2014 SHA-256 `b66e4620700b8b9c3c75cd1507aef4401a0fc6cb622df369d9123922c0bc9863`"
+  "notes": "# vMLX 1.6.80\n\n## Models and inference\n\n- Add MiMo-V2.6 image, video, audio and tool support, bundled DFlash detection, and SSD-backed conversations. Restore ordinary decoding when the drafter is disabled.\n- Add Nemotron-3.5 Bolt and Super-VL, including native vision support and compatible Super-VL MTP. LiLiCorr remains optional and off by default.\n- Improve long-document prefix reuse, prefill cancellation, and background cache persistence. Preserve native model sampling and existing speculative decoding defaults.\n\n## Images\n\n- Add Qwen Image 2.1 and Turbo generation/reference editing and compatible Ideogram 4 generation.\n- Add native SeedVR2 resolution and softness controls, saved output dimensions, structured FIBO captions, and explicit Flux2 Klein editing.\n- Preserve image adapter selection across requests, new sessions, and deep sleep; validate unsupported controls clearly.\n\n## App and API\n\n- Keep earlier MiMo media in Responses follow-ups; return recoverable errors for rejected tool output without executing invented tools or automatically retrying generation.\n- Fix remote-session switching, preserve string-valued GLM tool arguments, and keep large text pastes responsive.\n- Explain why changing tools or thinking can invalidate a long chat's prefix cache. Show tool-loop prompt usage as a total across requests.\n- Include JANG 2.5.50 Nemotron vision modules and qualified MFlux 0.23 / Pillow 12.3 dependencies.\n\nPerformance depends on the bundle, prompt, sampling, context and device state. Speculative decoding can benefit code or long-context workloads while remaining slower than ordinary decoding on some prose workloads; this release does not promise a universal speed floor.\n\nUse the Tahoe build on macOS 26 or newer for native Metal kernels. The Sequoia build supports macOS 14.5 and newer.\n\n## Verified release artifacts\n\nBuilt from [`3830f403`](https://github.com/jjang-ai/vmlx/commit/3830f403b92f0ae4680a892ee0dc70a859159e73), with JANG [`6dd1268e`](https://github.com/jjang-ai/jangq/commit/6dd1268e864a36bf40ee176c7e98b67336df14f2). Both DMGs are signed, notarized and stapled.\n\n| Download | SHA-256 |\n|---|---|\n| vMLX-1.6.80-sequoia-arm64.dmg | `1f97895dc875b18655e33865233fe21a418eaad91bd5defdddaa4f8fcd0c56ea` |\n| vMLX-1.6.80-tahoe-arm64.dmg | `586dec74d543e5fe270cee3a07aa6ee575a7c9b0e03ce968f44ae2a50d50f878` |\n\nFull provenance and Python distribution hashes are in `release-info.json`."
 }
