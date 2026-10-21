@@ -1,21 +1,21 @@
 {
-  "version": "1.6.80",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.80/vMLX-1.6.80-tahoe-arm64.dmg",
-  "sha256": "586dec74d543e5fe270cee3a07aa6ee575a7c9b0e03ce968f44ae2a50d50f878",
-  "sha512": "VrHPJ4oNkWFDLmyqyRmUWw2kf/tywUY/8U0N67mvrb8U7rc1/FFjYD2zKzZQRNSajITJFeqreb997m4BojJ6VA==",
+  "version": "1.6.81",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.81/vMLX-1.6.81-tahoe-arm64.dmg",
+  "sha256": "5ab8be67b1e3b139e65535628377ef2f1094031b1cdf966dfbf8c59d17ce5ac9",
+  "sha512": "KJOcEbW0S4P3NfZET86VG3Dm0NssTMbXVL1qTEx42cMgc7QqBMzcG7xLFNFZgTOlKfH+pCOGdjybwAblr/kyyg==",
   "downloads": {
     "sequoia": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.80/vMLX-1.6.80-sequoia-arm64.dmg",
-      "bytes": 577850852,
-      "sha256": "1f97895dc875b18655e33865233fe21a418eaad91bd5defdddaa4f8fcd0c56ea",
-      "sha512": "LQtlQT88Y/lfBLQ2TU4ha4Mm1GovqeduAcOJmq5wCsp/iVMstuzkXm0eU1YPZrPSN86p9CFS5LeYKa7LwiPAcA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.81/vMLX-1.6.81-sequoia-arm64.dmg",
+      "bytes": 578812383,
+      "sha256": "9f36cb7f8714c3e0351c18898bb9913619bd64ecf7a96645fe90d39b926ae4c4",
+      "sha512": "mVP8XXEvA6k7KB3NWSHQ4XLq/Y/J9mBJgAHVX+nIXWKSdLPkBTwfluqDniYTshN1ksvVxh4xOz0+IjptoEy+sA=="
     },
     "tahoe": {
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.80/vMLX-1.6.80-tahoe-arm64.dmg",
-      "bytes": 603303189,
-      "sha256": "586dec74d543e5fe270cee3a07aa6ee575a7c9b0e03ce968f44ae2a50d50f878",
-      "sha512": "VrHPJ4oNkWFDLmyqyRmUWw2kf/tywUY/8U0N67mvrb8U7rc1/FFjYD2zKzZQRNSajITJFeqreb997m4BojJ6VA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.81/vMLX-1.6.81-tahoe-arm64.dmg",
+      "bytes": 604310345,
+      "sha256": "5ab8be67b1e3b139e65535628377ef2f1094031b1cdf966dfbf8c59d17ce5ac9",
+      "sha512": "KJOcEbW0S4P3NfZET86VG3Dm0NssTMbXVL1qTEx42cMgc7QqBMzcG7xLFNFZgTOlKfH+pCOGdjybwAblr/kyyg=="
     }
   },
-  "notes": "# vMLX 1.6.80\n\n## Models and inference\n\n- Add MiMo-V2.6 image, video, audio and tool support, bundled DFlash detection, and SSD-backed conversations. Restore ordinary decoding when the drafter is disabled.\n- Add Nemotron-3.5 Bolt and Super-VL, including native vision support and compatible Super-VL MTP. LiLiCorr remains optional and off by default.\n- Improve long-document prefix reuse, prefill cancellation, and background cache persistence. Preserve native model sampling and existing speculative decoding defaults.\n\n## Images\n\n- Add Qwen Image 2.1 and Turbo generation/reference editing and compatible Ideogram 4 generation.\n- Add native SeedVR2 resolution and softness controls, saved output dimensions, structured FIBO captions, and explicit Flux2 Klein editing.\n- Preserve image adapter selection across requests, new sessions, and deep sleep; validate unsupported controls clearly.\n\n## App and API\n\n- Keep earlier MiMo media in Responses follow-ups; return recoverable errors for rejected tool output without executing invented tools or automatically retrying generation.\n- Fix remote-session switching, preserve string-valued GLM tool arguments, and keep large text pastes responsive.\n- Explain why changing tools or thinking can invalidate a long chat's prefix cache. Show tool-loop prompt usage as a total across requests.\n- Include JANG 2.5.50 Nemotron vision modules and qualified MFlux 0.23 / Pillow 12.3 dependencies.\n\nPerformance depends on the bundle, prompt, sampling, context and device state. Speculative decoding can benefit code or long-context workloads while remaining slower than ordinary decoding on some prose workloads; this release does not promise a universal speed floor.\n\nUse the Tahoe build on macOS 26 or newer for native Metal kernels. The Sequoia build supports macOS 14.5 and newer.\n\n## Verified release artifacts\n\nBuilt from [`3830f403`](https://github.com/jjang-ai/vmlx/commit/3830f403b92f0ae4680a892ee0dc70a859159e73), with JANG [`6dd1268e`](https://github.com/jjang-ai/jangq/commit/6dd1268e864a36bf40ee176c7e98b67336df14f2). Both DMGs are signed, notarized and stapled.\n\n| Download | SHA-256 |\n|---|---|\n| vMLX-1.6.80-sequoia-arm64.dmg | `1f97895dc875b18655e33865233fe21a418eaad91bd5defdddaa4f8fcd0c56ea` |\n| vMLX-1.6.80-tahoe-arm64.dmg | `586dec74d543e5fe270cee3a07aa6ee575a7c9b0e03ce968f44ae2a50d50f878` |\n\nFull provenance and Python distribution hashes are in `release-info.json`."
+  "notes": "# vMLX 1.6.81\n\n- Let native MTP, DFlash2 and DSpark choose draft work adaptively within their verified limits. Treat bundle and tuning depths as starting points, with measured ordinary-decoding fallback and re-entry.\n- Add explicit Adaptive LiLiCorr controls for compatible Nemotron Bolt bundles. Preserve the existing off-by-default behavior and saved session choice.\n- Correct native verification at long-context attention dispatch boundaries and Qwen DFlash2 verification across wider blocks. Preserve causal presence-penalty arithmetic and rejected-token rollback.\n- Honor model-declared thinking and non-thinking sampling presets across the app and all four chat APIs, including embedded JANG configuration. Keep explicit request overrides.\n- Improve Ornith 1.5 loading, prefill and long-context attention, including split expert layouts, hidden-state normalization and idempotent MTP patch installation.\n- Improve Qwen 27B dense multi-row decoding and keep MiMo verification on its qualified MLX kernels. Throughput gains depend on the bundle, sampling, context and workload; adaptive operation does not guarantee faster requests or improved prefill.\n- Preserve speculative SSD parent chains and native media positions across restores. Reduce duplicate hybrid-cache payload work while retaining background persistence and safe tool continuations.\n- Report runtime-selected draft widths, scoped native MTP acceptance, mixed weight precision and observed GDN dispatch accurately. Keep cached prompt throughput distinct from newly computed prefill.\n- Explain suppressed model tool markup without emitting premature success. Preserve consumed token/cache usage on API errors and completed empty assistant boundaries in subsequent chat history.\n- Make generic external drafting adaptive and verify sequentially to preserve ordinary target arithmetic. This compatibility path can be slower than ordinary decoding and does not support persistent prefix caching.\n- Preserve small file sizes in built-in directory listings.\n\n\nDownloads: Tahoe build for macOS 26 and later; Sequoia compatibility build for supported earlier macOS versions. Both require Apple Silicon."
 }
