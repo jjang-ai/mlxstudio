@@ -1,23 +1,23 @@
 {
-  "version": "1.6.86",
-  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.86/vMLX-1.6.86-tahoe-arm64.dmg",
-  "sha256": "9e9f0d7f792b928b9b7531255ffc518054dafd6cacc7f8b1b255c67656d0e006",
-  "sha512": "PxpwxiBCqs7wtXYa+NUoBPbGLcNQExNphG0hgZyzbXRFEQbrim/dExpYHZhIANcOSFNYf9h+GcIdrE+yevUCNA==",
+  "version": "1.6.87",
+  "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.87/vMLX-1.6.87-tahoe-arm64.dmg",
+  "sha256": "55624e66fb6cb1eeba45ada584e6bf44c0e3913f35078c4d5d1342230ddfdf89",
+  "sha512": "9ocbS63pVm2z0l6/ksRZNigbdm2Cmb7MIK/Oqqrl3yzKy7u+09sC8iGVbBoTXVJGqeU8Qi3Nawen91SBncBVYQ==",
   "downloads": {
     "sequoia": {
       "minimumSystemVersion": "14.5.0",
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.86/vMLX-1.6.86-sequoia-arm64.dmg",
-      "bytes": 583218402,
-      "sha256": "29afd3318bf92c27aa14d18d4b53df5aa30eab9ac7891447e5e98c66a9bdd94e",
-      "sha512": "4I82kJkqAC+K0jH1uhqdmhZYYRGyCDNL30cpOCdPrndW43wvWS+eA6Ncng1Dt3Hxbm+4CZL97SRMRp4jQJxSvQ=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.87/vMLX-1.6.87-sequoia-arm64.dmg",
+      "bytes": 583339992,
+      "sha256": "5a8f2ad3c34f8d4c0e1229c85a5243d2158b55e14533083c112fc53d28e965a5",
+      "sha512": "QObUBgVUqogC6h2/j02iCfcK2AZlxq79hdk6tBuYw9aaRdrQ+XZhPEzDDWinu2C/4j4Erm78/S0lg/TzLZtvvg=="
     },
     "tahoe": {
       "minimumSystemVersion": "26.2.0",
-      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.86/vMLX-1.6.86-tahoe-arm64.dmg",
-      "bytes": 618570744,
-      "sha256": "9e9f0d7f792b928b9b7531255ffc518054dafd6cacc7f8b1b255c67656d0e006",
-      "sha512": "PxpwxiBCqs7wtXYa+NUoBPbGLcNQExNphG0hgZyzbXRFEQbrim/dExpYHZhIANcOSFNYf9h+GcIdrE+yevUCNA=="
+      "url": "https://github.com/jjang-ai/mlxstudio/releases/download/v1.6.87/vMLX-1.6.87-tahoe-arm64.dmg",
+      "bytes": 618735115,
+      "sha256": "55624e66fb6cb1eeba45ada584e6bf44c0e3913f35078c4d5d1342230ddfdf89",
+      "sha512": "9ocbS63pVm2z0l6/ksRZNigbdm2Cmb7MIK/Oqqrl3yzKy7u+09sC8iGVbBoTXVJGqeU8Qi3Nawen91SBncBVYQ=="
     }
   },
-  "notes": "# vMLX 1.6.86\n\n## Changes\n\n- Publish vMLX 1.6.85 updater manifest (`0fb82acd`)\n- bonsai2.5 & holo4: fused Hadamard/ternary kernels, eval mode, adaptive Native MTP, and Qwen3.5-MoE sanitize fix (`b66697cd`)\n- jangt: soft-capped Inkling activation variant for the trellis kernels (`8126e2a4`)\n- jangt: native NVFP4 / MXFP8 groups in JTMixedSwitchGLU (`721b3e48`)\n- inkling2: load JANGHT bundles with per-unit routed formats (`538165a6`)\n- tests: Inkling JANGHT activation, mixed-group dispatch and loader contract (`b0c9a638`)\n- ernie5.5 & jangh: native ernie5_5_moe JANGHT2.4 + DSpark runtime, fused JANGH/JANGT SiTU kernels, parsers, and registry wiring (`ec2ae80e`)\n- integrity: preserve digest-pinned dspark manifest sidecars without failing alignment rewrite (`8eddb4b0`)\n- ernie5.5 & inkling2: fix Metal constant-space indexing in mHC; add Inkling direct-sinks SDPA, lifted device/version gates, fused JANGH/NVFP4 MoE, multi-row lm_head, RotatingKVCache commit, and cold-compile policy fix (`ebd60e3f`)\n- ernie5.5 & tool-loop-cache: split-K fused mHC, high-occupancy router/compressor, fused E4M3+H128/H32, banded HCA prefill, exact 128-boundary rollback, and async SSD/tool-wait optimizations (`1c27490e`)\n- ernie5.5 & janght: fused expand+mHC split-K64, split-K HyperHead, 8sg MultiRouter, 4sg compressor, MXFP8 LUT GEMV, parallel-slot weighted down, preallocated HCA caches, and SSM disk contract fix (`cf9cb05b`)\n- ernie5.5 & dspark: barrier-free multi-row MXFP8 2D/3D GEMV (T=1..8), T<=8 parallel-slot JT/JH weighted down, and ARFallback cold-compile outlier guard (`6c4e7224`)\n- ernie5.5: eliminate register spill in multi-row MXFP8 2D/3D GEMV (~28 regs at T=8) (`915f718a`)\n- ernie5.5: restore native MXFP8 verify speed, 512-strip chunked MLA prefill, and exact typed ErnieLayerCache RAM+SSD prefix cache (`10237a84`)\n- perf(inkling2): fuse looping kernels, fix verify vocab slice, and wire ernie/inkling panel parsers (`104b08ee`)\n- fix(ernie5.5): complete MLX Studio reasoning, tool streaming, N-1 SSD cache, docs, and tests (`631f8c9e`)\n- Prepare vMLX and MLX Studio 1.6.86 with Phase 2 Metal/Python speedups (`abcddcdb`)\n- fix(dspark): make attach_text_lane idempotent and clear post-load Metal cache for ERNIE 5.5 (`b0a50cf5`)\n\n## Runtime provenance\n\n- vMLX source: `b0a50cf519e26eb986021d3a7db32b2cd62ba275`\n- JANG runtime: `717de87c0122b9f030f3bf5ae3cbe7ec2267e8c0` (`jang 2.5.53`)\n- Tahoe/macOS 26 is the default build; Sequoia is the compatibility build.\n- Both DMGs are Developer ID signed, independently notarized, stapled, and Gatekeeper checked by the candidate workflow.\n\n## Downloads\n\n- **Tahoe**: `vMLX-1.6.86-tahoe-arm64.dmg`\n  - SHA-256: `9e9f0d7f792b928b9b7531255ffc518054dafd6cacc7f8b1b255c67656d0e006`\n  - Size: `618570744` bytes\n- **Sequoia**: `vMLX-1.6.86-sequoia-arm64.dmg`\n  - SHA-256: `29afd3318bf92c27aa14d18d4b53df5aa30eab9ac7891447e5e98c66a9bdd94e`\n  - Size: `583218402` bytes\n\n## Python distributions\n\n- Wheel: `vmlx-1.6.86-py3-none-any.whl` \u2014 SHA-256 `ca22e32cd43554a662b1e8cca4a3c9939b2dc5695618612f8ff0bd23422ab0b5`\n- Source: `vmlx-1.6.86.tar.gz` \u2014 SHA-256 `dd13ce9699a32f53fc5fc36c14b736a630aec920b6d78134b396809b6807a162`"
+  "notes": "# vMLX 1.6.87\n\n## Changes\n\n- Publish vMLX 1.6.86 updater manifest (`31cd5e63`)\n- feat: Phase 3 long-context kernels, Inkling-2 bundled DFlash2, ERNIE-5.5 MXFP4, and Hy4-flash runtime (`ad63fddf`)\n- feat(hy4): full VL+DFly2, per-tool-call streaming, reasoning effort, RAM/SSD cache, and Panel settings parity (`29b5cd70`)\n- fix(hy4): exact typed N-1 prompt-boundary snapshot, SSD L2 persistence/restart refault, and capabilities reasoning_efforts (`967288c9`)\n- fix(hy4): wire ModelConfig architecture_hints, update docs, and add v1.6.87 scoped prepackage schema (`46de373d`)\n- chore(release): bump vMLX to 1.6.87 (`87521711`)\n- fix(hy4): accept canonicalized <think>/</think> aliases during streaming reasoning parse (`ccf74f3f`)\n\n## Runtime provenance\n\n- vMLX source: `ccf74f3f720f15792f2c26ad3e01195f2977f3b0`\n- JANG runtime: `717de87c0122b9f030f3bf5ae3cbe7ec2267e8c0` (`jang 2.5.53`)\n- Tahoe/macOS 26 is the default build; Sequoia is the compatibility build.\n- Both DMGs are Developer ID signed, independently notarized, stapled, and Gatekeeper checked by the candidate workflow.\n\n## Downloads\n\n- **Tahoe**: `vMLX-1.6.87-tahoe-arm64.dmg`\n  - SHA-256: `55624e66fb6cb1eeba45ada584e6bf44c0e3913f35078c4d5d1342230ddfdf89`\n  - Size: `618735115` bytes\n- **Sequoia**: `vMLX-1.6.87-sequoia-arm64.dmg`\n  - SHA-256: `5a8f2ad3c34f8d4c0e1229c85a5243d2158b55e14533083c112fc53d28e965a5`\n  - Size: `583339992` bytes\n\n## Python distributions\n\n- Wheel: `vmlx-1.6.87-py3-none-any.whl` \u2014 SHA-256 `847dcc959211adb7efad403674f08f4041afea1446704c79696149bf2134ee48`\n- Source: `vmlx-1.6.87.tar.gz` \u2014 SHA-256 `0e4ae6e064c33fa0a8c719348e49e18c4b50101c8dbe7e6fb7a8f594f98b459a`"
 }
